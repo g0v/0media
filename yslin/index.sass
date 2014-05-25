@@ -70,5 +70,39 @@ html,body
     overflow: hidden
     content: " "
 
+.section-headline2
+  .ib
+    width: 60%
+    margin: 20px 15% 20px 25%
+    position: relative
+    &:before
+      display: block
+      position: absolute
+      left: -130px
+      content: " "
+      width: 120px
+      height: 80px
+      background: url(img/lock2.svg) center center no-repeat
+      background-size: cover
+  .title
+    font-size: 2.5em
+  .year
+    color: #DB4441
+    font-size: 1.5em
+  .author
+    float: right
+    color: #808285
+    .c
+      display: inline-block
+    .c:first-of-type
+      padding-right: 10px
+      border-right: 1px solid #808285
+    .c:nth-of-type(2)
+      text-align: center
+      width: 80px
+    .c:nth-of-type(3)
+      text-align: right
+      width: 120px
+
 #sh1
   margin-top: 1000px
