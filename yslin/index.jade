@@ -5,6 +5,11 @@ doctype html
 - var lib = { jquery: true, d3js: true, angular: true, bootstrap: true, semantic: false }
 - var assets = "assets"
 - var thumbnail = "http://dummy.thumbnail"
+mixin timeline-item(name, year, title)
+      .li(data-anchor-target=name,data-600-top="color:rgba(128,130,133,1)",data-top="color:rgba(219,68,65,1)",data-top-bottom="color:rgba(219,68,65,1)",data--300-top-bottom="color:rgba(128,130,133,1)")
+        .c= year
+        .c(data-anchor-target=name,data-600-top="background:rgba(219,68,65,0)",data-100-top="background:rgba(219,68,65,1)",data-top-bottom="background:rgba(219,68,65,1)",data--300-top-bottom="background:rgba(219,68,65,0)") &nbsp;
+        .c(data-anchor-target=name,data-600-top="opacity:0",data-top="opacity:1",data-top-bottom="opacity:1",data--300-top-bottom="opacity:0")= title
 html(lang="en")
   head(prefix="og: http://ogp.me/ns#")
     meta(charset="utf-8")
@@ -40,7 +45,7 @@ html(lang="en")
         img.linex4(src="img/linex4.svg")
         .title 白色恐怖的歷史脈絡
         .part PART III
-    .section-headline2: .ib
+    .section-headline2#white-fear: .ib
       .author
         .li
           .c 撰稿
@@ -62,34 +67,16 @@ html(lang="en")
       .src 資料來源
       .date 影片日期
     .hr-bk
-    #timeline
-      .li
-        .c 1949
-        .c(data-anchor-target="#keelung-section",data-600-top="opacity:0",data-top="opacity:1",data-top-bottom="opacity:1",data--300-top-bottom="opacity:0") 基隆中學事件
-      .li
-        .c 1953
-        .c(data-anchor-target="#luku-section",data-600-top="opacity:0",data-top="opacity:1",data-top-bottom="opacity:1",data--300-top-bottom="opacity:0") 鹿窟事件
-      .li
-        .c 1954
-        .c(data-anchor-target="#high-section",data-600-top="opacity:0",data-top="opacity:1",data-top-bottom="opacity:1",data--300-top-bottom="opacity:0") 高山族的白色風暴
-      .li
-        .c 1969
-        .c(data-anchor-target="#young-section",data-600-top="opacity:0",data-top="opacity:1",data-top-bottom="opacity:1",data--300-top-bottom="opacity:0") 許席圖與青年自覺運動
-      .li
-        .c 1970
-        .c(data-anchor-target="#taiyuan-section",data-600-top="opacity:0",data-top="opacity:1",data-top-bottom="opacity:1",data--300-top-bottom="opacity:0") 泰源監獄案
-      .li
-        .c 1977
-        .c(data-anchor-target="#jongli-section",data-600-top="opacity:0",data-top="opacity:1",data-top-bottom="opacity:1",data--300-top-bottom="opacity:0") 中壢事件
-      .li
-        .c 1979
-        .c(data-anchor-target="#beauty-section",data-600-top="opacity:0",data-top="opacity:1",data-top-bottom="opacity:1",data--300-top-bottom="opacity:0") 美麗島事件
-      .li
-        .c 1980
-        .c(data-anchor-target="#yslin-section",data-600-top="opacity:0",data-top="opacity:1",data-top-bottom="opacity:1",data--300-top-bottom="opacity:0") 林宅血案
-      .li
-        .c 1981
-        .c(data-anchor-target="#wenchen-section",data-600-top="opacity:0",data-top="opacity:1",data-top-bottom="opacity:1",data--300-top-bottom="opacity:0") 陳文成事件
+    #timeline(data-anchor-target="#keelung-section",data-300-top="opacity:0",data-top="opacity:1")
+      +timeline-item("#keelung-section","1949","基隆中學事件")
+      +timeline-item("#luku-section","1953","鹿窟事件")
+      +timeline-item("#high-section","1954","高山族的白色風暴")
+      +timeline-item("#young-section","1969","許席圖與青年自覺運動")
+      +timeline-item("#taiyuan-section","1970","泰源監獄案")
+      +timeline-item("#jongli-section","1977","中壢事件")
+      +timeline-item("#beauty-section","1979","美麗島事件")
+      +timeline-item("#yslin-section","1980","林宅血案")
+      +timeline-item("#wenchen-section","1981","陳文成事件")
     #keelung-section
       .section-headline2: .ib
         .title 基隆中學事件
@@ -192,8 +179,9 @@ html(lang="en")
       | 當時台灣一波又一波追求民主化的反對運動，也撼動了遠在海外的陳文成。因此，陳文成參與編編寫全美台灣同鄉會《安雅堡鄉訊》，更創立「民主推動基金」，替美麗島雜誌募款。但這些行為，卻也為國民黨的海外校園間諜（領取國民黨酬勞的職業學生）所掌握。
     .section
       | 1981年5月，陳文成返台時，即兩度遭到警備總部約談，更於7月2日第二次約談後，行蹤成謎，隔日早晨被發現陳屍於台大校園。各項證據均顯示，陳文成應是他人謀殺致死。這也使得國民黨猖獗的校園間諜和恣意押人問案的情治機構，受到國際社會的高度關注。
-    .redheadline: .ib 陳文成與妻子
-    img.photo(style="background-image:url(img/wenchen.jpg)")
+    div(style="width:65%;margin-left:10%")
+      .redheadline: .ib 陳文成與妻子
+      img.photo(style="background-image:url(img/wenchen.jpg)")
 
   .hr-bk
 
