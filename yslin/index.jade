@@ -5,11 +5,13 @@ doctype html
 - var lib = { jquery: true, d3js: true, angular: true, bootstrap: true, semantic: false }
 - var assets = "assets"
 - var thumbnail = "http://dummy.thumbnail"
+mixin fractal(x,y,r,n)
+  img.fractal(data-anchor-target="#sh1",data--250-top="opacity:0",data--300-top="margin-top:0px;margin-left:0px;-webkit-transform:rotate(0deg);opacity:1",data--800-top="margin-top:"+y+"px;margin-left:"+x+"px;-webkit-transform:rotate("+r+"deg);opacity:0.4",data--900-top="opacity:0",src="img/fractal"+n+".svg")
 mixin timeline-item(name, year, title)
-      .li(data-anchor-target=name,data-600-top="color:rgba(128,130,133,1)",data-top="color:rgba(219,68,65,1)",data-top-bottom="color:rgba(219,68,65,1)",data--300-top-bottom="color:rgba(128,130,133,1)")
-        .c= year
-        .c(data-anchor-target=name,data-600-top="background:rgba(219,68,65,0)",data-100-top="background:rgba(219,68,65,1)",data-top-bottom="background:rgba(219,68,65,1)",data--300-top-bottom="background:rgba(219,68,65,0)") &nbsp;
-        .c(data-anchor-target=name,data-600-top="opacity:0",data-top="opacity:1",data-top-bottom="opacity:1",data--300-top-bottom="opacity:0")= title
+  .li(data-anchor-target=name,data-600-top="color:rgba(128,130,133,1)",data-top="color:rgba(219,68,65,1)",data-top-bottom="color:rgba(219,68,65,1)",data--300-top-bottom="color:rgba(128,130,133,1)")
+    .c= year
+    .c(data-anchor-target=name,data-600-top="background:rgba(219,68,65,0)",data-100-top="background:rgba(219,68,65,1)",data-top-bottom="background:rgba(219,68,65,1)",data--300-top-bottom="background:rgba(219,68,65,0)") &nbsp;
+    .c(data-anchor-target=name,data-600-top="opacity:0",data-top="opacity:1",data-top-bottom="opacity:1",data--300-top-bottom="opacity:0")= title
 html(lang="en")
   head(prefix="og: http://ogp.me/ns#")
     meta(charset="utf-8")
@@ -28,20 +30,25 @@ html(lang="en")
         .collapse.navbar-collapse
           ui.nav.navbar-nav
     #content
+      #fear fear
       .section-headline#sh1: .ib
-        .fractal(data-0="opacity:0",data-899="opacity:0",data-900="opacity:1")
-          img(data-900="top:100px;margin-left:0px;-webkit-transform:rotate(0deg);opacity:1",data-1000="top:0px;margin-left:20px;-webkit-transform:rotate(270deg);opacity:0",src="img/fractal1.svg")
-          img(data-900="top:100px;margin-left:0px;-webkit-transform:rotate(0deg);opacity:1",data-1000="top:200px;margin-left:50px;-webkit-transform:rotate(170deg);opacity:0",src="img/fractal4.svg")
-          img(data-900="top:100px;margin-left:0px;-webkit-transform:rotate(0deg);opacity:1",data-1000="top:-50px;margin-left:600px;-webkit-transform:rotate(90deg);opacity:0",src="img/fractal3.svg")
-          img(data-900="top:100px;margin-left:0px;-webkit-transform:rotate(0deg);opacity:1",data-1000="top:90px;margin-left:-500px;-webkit-transform:rotate(1440deg);opacity:0",src="img/fractal5.svg")
-          img(data-900="top:100px;margin-left:0px;-webkit-transform:rotate(0deg);opacity:1",data-1000="top:110px;margin-left:-35px;-webkit-transform:rotate(360deg);opacity:0",src="img/fractal2.svg")
-          img(data-900="top:100px;margin-left:0px;-webkit-transform:rotate(0deg);opacity:1",data-1000="top:40px;margin-left:-30px;-webkit-transform:rotate(45deg);opacity:0",src="img/fractal1.svg")
-          img(data-900="top:100px;margin-left:0px;-webkit-transform:rotate(0deg);opacity:1",data-1000="top:500px;margin-left:20px;-webkit-transform:rotate(270deg);opacity:0",src="img/fractal3.svg")
-          img(data-900="top:100px;margin-left:0px;-webkit-transform:rotate(0deg);opacity:1",data-1000="top:-100px;margin-left:10px;-webkit-transform:rotate(180deg);opacity:0",src="img/fractal2.svg")
-          img(data-900="top:100px;margin-left:0px;-webkit-transform:rotate(0deg);opacity:1",data-1000="top:-30px;margin-left:100px;-webkit-transform:rotate(270deg);opacity:0",src="img/fractal5.svg")
-          img(data-900="top:100px;margin-left:0px;-webkit-transform:rotate(0deg);opacity:1",data-1000="top:-400px;margin-left:-10px;-webkit-transform:rotate(90deg);opacity:0",src="img/fractal4.svg")
-        img.key(data-565="margin-left:-400px;margin-top:348px",data-900="margin-left:-65px;margin-top:48px;opacity:1",data-950="opacity:0",src="img/key.svg")
-        img.lock(src="img/lock.svg",data-565="margin-left:305px;margin-top:-335px",data-900="margin-left:-30px;margin-top:0px;opacity:1",data-950="opacity:0")
+        +fractal(200,10,270,1)
+        +fractal(-200,20,120,1)
+        +fractal(10,210,360,2)
+        +fractal(-100,150,720,2)
+        +fractal(50,410,270,3)
+        +fractal(30,210,170,3)
+        +fractal(-100,-110,370,4)
+        +fractal(0,200,470,4)
+        +fractal(50,-310,200,5)
+        +fractal(200,110,170,5)
+        +fractal(500,50,270,2)
+        +fractal(-400,-260,570,1)
+        +fractal(700,90,270,3)
+        +fractal(-600,-170,170,4)
+        +fractal(1000,10,470,5)
+        img.key(data-anchor-target="#sh1",data-400-top="opacity:0",data-300-top="opacity:1;margin-left:-400px;margin-top:200px",data--300-top="margin-left:-65px;margin-top:27px;opacity:1",data--800-top="opacity:0",src="img/key.svg")
+        img.lock(data-anchor-target="#sh1",data-400-top="opacity:0",data-300-top="opacity:1;margin-left:305px;margin-top:-200px",data--300-top="margin-left:-30px;margin-top:-20px;opacity:1",data--800-top="opacity:0",src="img/lock.svg")
         img.linex4(src="img/linex4.svg")
         .title 白色恐怖的歷史脈絡
         .part PART III
