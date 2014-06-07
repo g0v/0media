@@ -1,3 +1,5 @@
+@import basic
+
 html,body
   margin: 0
   padding: 0
@@ -112,12 +114,19 @@ img.key
 
 .section-headline
   margin-bottom: 400px
+  height: 2500px
+  position: relative
   .fractal
     position: fixed
     width: 32px
     top: 50%
     left: 50%
     z-index: 20
+
+  .main
+    position: fixed
+    width: 100%
+    margin-top: 100px
   .ib
     text-align: center
     background: #000
@@ -125,10 +134,10 @@ img.key
     height: 500px
     overflow: hidden
     position: relative
-  .lock, .key
+  .lock, .key, .speaker, .microphone
     display: block
-    position: fixed
-    top: 50%
+    position: absolute
+    top: 0
     left: 50%
   .lock
     width: 125px
@@ -141,6 +150,11 @@ img.key
     height: 60px
     margin-left: -65px
     margin-top: 48px
+  .microphone
+    width: 80px
+    margin-left: -40px
+  .speaker
+    width: 80px
   .linex4
     width: 125px
     margin-top: 270px
@@ -153,7 +167,7 @@ img.key
     letter-spacing: 1px
     color: #DB4441
     font-size: 1.1em
-  &:before, &:after
+  .main .redline
     display: block
     width: 60%
     height: 2px

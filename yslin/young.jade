@@ -1,0 +1,60 @@
+doctype html
+//- basic libraries: jquery(1.10.2), d3js(3.3.11), angularjs(1.2.3), bootstrap(3.0)/semantic-ui(0.9.3/0.9.5)
+- var usecdn = false
+- var useog = false
+- var lib = { jquery: true, d3js: true, angular: true, bootstrap: true, semantic: false }
+- var assets = "assets"
+- var thumbnail = "http://dummy.thumbnail"
+mixin fractal(x,y,r,n)
+  img.fractal(data-anchor-target="#sh1",data--250-top="opacity:0",data--300-top="margin-top:0px;margin-left:0px;-webkit-transform:rotate(0deg);opacity:1",data--800-top="margin-top:"+y+"px;margin-left:"+x+"px;-webkit-transform:rotate("+r+"deg);opacity:0.4",data--900-top="opacity:0",src="img/fractal"+n+".svg")
+mixin timeline-item(name, year, title)
+  .li(data-anchor-target=name,data-600-top="color:rgba(128,130,133,1)",data-top="color:rgba(219,68,65,1)",data-top-bottom="color:rgba(219,68,65,1)",data--300-top-bottom="color:rgba(128,130,133,1)")
+    .c= year
+    .c(data-anchor-target=name,data-600-top="background:rgba(219,68,65,0)",data-100-top="background:rgba(219,68,65,1)",data-top-bottom="background:rgba(219,68,65,1)",data--300-top-bottom="background:rgba(219,68,65,0)") &nbsp;
+    .c(data-anchor-target=name,data-600-top="opacity:0",data-top="opacity:1",data-top-bottom="opacity:1",data--300-top-bottom="opacity:0")= title
+html(lang="en")
+  head(prefix="og: http://ogp.me/ns#")
+    meta(charset="utf-8")
+    title template
+    // libraries
+    include library.jade
+    // custom files
+    link(rel="stylesheet",type="text/css",href="index.css")
+    script(type="text/javascript",src="index.js")
+    script(type="text/javascript",src="skrollr.min.js")
+  body(ng-app,ng-controller="main")
+    .navbar.navbar-inverse.navbar-fixed-top(role="navigation")
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(href="#") 失落的年代 林義雄數位專輯
+        .collapse.navbar-collapse
+          ui.nav.navbar-nav
+    #content
+      #fear fear
+      .section-headline#sh1: .main(data-anchor-target="#sh1",data-bottom-top="opacity:1;top:100%",data-100-top="opacity:1;top:0%",data-bottom-bottom="top:0%",data-top-bottom="top:-100%")
+        .redline(data-anchor-target="#sh1",data-300-top="margin-left:40%",data--1000-top="margin-left:20%")
+        .ib
+          +fractal(200,10,270,1)
+          +fractal(-200,20,120,1)
+          +fractal(10,210,360,2)
+          +fractal(-100,150,720,2)
+          +fractal(50,410,270,3)
+          +fractal(30,210,170,3)
+          +fractal(-100,-110,370,4)
+          +fractal(0,200,470,4)
+          +fractal(50,-310,200,5)
+          +fractal(200,110,170,5)
+          +fractal(500,50,270,2)
+          +fractal(-400,-260,570,1)
+          +fractal(700,90,270,3)
+          +fractal(-600,-170,170,4)
+          +fractal(1000,10,470,5)
+          img.speaker(data-anchor-target="#sh1",data-400-top="opacity:0",data-300-top="opacity:1;margin-left:-400px;margin-top:200px",data--1000-top="margin-left:-115px;margin-top:77px;opacity:1",data--1900-top="opacity:0",src="img/speaker1.svg")
+          img.speaker(data-anchor-target="#sh1",data-400-top="opacity:0",data-300-top="opacity:1;margin-left:320px;margin-top:200px",data--1000-top="margin-left:35px;margin-top:77px;opacity:1",data--1900-top="opacity:0",src="img/speaker2.svg")
+          img.microphone(data-anchor-target="#sh1",data-400-top="opacity:0",data-300-top="opacity:1",data--1000-top="opacity:1",data--1900-top="opacity:0",src="img/microphone.svg")
+          img.linex4(src="img/linex4.svg")
+          .title 年輕世代的觀點
+          .part PART IV
+        .redline(data-anchor-target="#sh1",data-300-top="margin-left:0%",data--1000-top="margin-left:20%")
+
+      div(style="width:100%;height:2000px;background: #ff0") .

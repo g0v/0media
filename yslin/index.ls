@@ -10,6 +10,7 @@ main = ($scope, $timeout) ->
   $scope.render = ->
     s = skrollr.get!getScrollTop!
     wh = $(window)height!
+    if !$scope.video => return
     top = $($scope.video).position!top
     h = $($scope.video)height!
     if s + wh > top and s < top + h and $scope.video.paused => $scope.video.play!

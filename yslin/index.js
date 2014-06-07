@@ -13,6 +13,9 @@ main = function($scope, $timeout){
     var s, wh, top, h;
     s = skrollr.get().getScrollTop();
     wh = $(window).height();
+    if (!$scope.video) {
+      return;
+    }
     top = $($scope.video).position().top;
     h = $($scope.video).height();
     if (s + wh > top && s < top + h && $scope.video.paused) {

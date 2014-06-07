@@ -1,3 +1,9 @@
+uiload {
+  display: inline-block;
+  position: relative; }
+  uiload > div {
+    position: relative; }
+
 html, body {
   margin: 0;
   padding: 0;
@@ -115,13 +121,19 @@ img.key {
   margin-top: 72px; }
 
 .section-headline {
-  margin-bottom: 400px; }
+  margin-bottom: 400px;
+  height: 2500px;
+  position: relative; }
   .section-headline .fractal {
     position: fixed;
     width: 32px;
     top: 50%;
     left: 50%;
     z-index: 20; }
+  .section-headline .main {
+    position: fixed;
+    width: 100%;
+    margin-top: 100px; }
   .section-headline .ib {
     text-align: center;
     background: black;
@@ -129,10 +141,10 @@ img.key {
     height: 500px;
     overflow: hidden;
     position: relative; }
-  .section-headline .lock, .section-headline .key {
+  .section-headline .lock, .section-headline .key, .section-headline .speaker, .section-headline .microphone {
     display: block;
-    position: fixed;
-    top: 50%;
+    position: absolute;
+    top: 0;
     left: 50%; }
   .section-headline .lock {
     width: 125px;
@@ -145,6 +157,11 @@ img.key {
     height: 60px;
     margin-left: -65px;
     margin-top: 48px; }
+  .section-headline .microphone {
+    width: 80px;
+    margin-left: -40px; }
+  .section-headline .speaker {
+    width: 80px; }
   .section-headline .linex4 {
     width: 125px;
     margin-top: 270px; }
@@ -157,7 +174,7 @@ img.key {
     letter-spacing: 1px;
     color: #db4441;
     font-size: 1.1em; }
-  .section-headline:before, .section-headline:after {
+  .section-headline .main .redline {
     display: block;
     width: 60%;
     height: 2px;
