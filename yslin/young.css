@@ -1,0 +1,90 @@
+#avatars {
+  width: 80%;
+  margin: auto; }
+
+#avatars .item {
+  width: 14%;
+  margin: 3%;
+  float: left; }
+
+.avatar {
+  width: 100%;
+  background: none;
+  border: 1px solid #db4441;
+  border-radius: 50%;
+  padding: 5%; }
+  .avatar .ib {
+    width: 100%;
+    height: 100%;
+    background: #db4441;
+    border-radius: 50%; }
+    .avatar .ib img {
+      width: 100%;
+      opacity: 0; }
+
+.brief {
+  padding: 10px 20px 20px;
+  color: #db4441; }
+  .brief .name {
+    font-size: 2em; }
+  .brief .desc {
+    font-size: 1.3em; }
+
+.brief.right {
+  border-right: 1px solid #db4441;
+  text-align: right;
+  position: relative; }
+
+.brief.left {
+  border-left: 1px solid #db4441;
+  text-align: left;
+  position: relative; }
+
+.caption {
+  font-size: 3em;
+  color: #db4441;
+  width: 100%;
+  text-align: center; }
+  .caption:before, .caption:after {
+    display: inline-block;
+    content: " ";
+    width: 80px;
+    height: 40px;
+    vertical-align: middle;
+    background: no-repeat center center; }
+  .caption:before {
+    background-image: url(img/caption-speaker1.svg); }
+  .caption:after {
+    background-image: url(img/caption-speaker2.svg); }
+
+#young-author {
+  width: 100%;
+  padding: 5px;
+  border-bottom: 1px solid #db4441;
+  height: 220px;
+  position: relative; }
+  #young-author .ib {
+    position: absolute;
+    bottom: 10px; }
+  #young-author #author-microphone {
+    position: absolute;
+    width: 90px;
+    height: 220px;
+    top: 20px;
+    left: 40%;
+    background: url(img/microphone2.svg) center center no-repeat; }
+
+.detail {
+  border-top: 1px solid #db4441;
+  border-bottom: 1px solid #db4441; }
+  .detail .ib {
+    margin: 10px 0;
+    width: 100%;
+    background: #db4441;
+    padding: 40px 60px;
+    color: white;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    line-height: 2.2em; }
+    .detail .ib p {
+      margin-bottom: 60px; }

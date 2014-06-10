@@ -1,0 +1,89 @@
+
+#avatars
+  width: 80%
+  margin: auto
+#avatars .item
+  width: 14%
+  margin: 3%
+  float: left
+.avatar
+  width: 100%
+  background: none
+  border: 1px solid #DB4441
+  border-radius: 50%
+  padding: 5%
+  .ib
+    width: 100%
+    height: 100%
+    background: #DB4441
+    border-radius: 50%
+    img
+      width: 100%
+      opacity: 0
+.brief
+  padding: 10px 20px 20px
+  color: #DB4441
+  .name
+    font-size: 2.0em
+  .desc
+    font-size: 1.3em
+.brief.right
+  border-right: 1px solid #DB4441
+  text-align: right
+  position: relative
+
+.brief.left
+  border-left: 1px solid #DB4441
+  text-align: left
+  position: relative
+
+.caption
+  font-size: 3em
+  color: #DB4441
+  width: 100%
+  text-align: center
+  &:before, &:after
+    display: inline-block
+    content: " "
+    width: 80px
+    height: 40px
+    vertical-align: middle
+    background: no-repeat center center
+  &:before
+    background-image: url(img/caption-speaker1.svg)
+  &:after
+    background-image: url(img/caption-speaker2.svg)
+
+#young-author
+  width: 100%
+  padding: 5px
+  border-bottom: 1px solid #DB4441
+  height: 220px
+  position: relative
+  .ib
+    position: absolute
+    bottom: 10px
+
+  #author-microphone
+    position: absolute
+    width: 90px
+    height: 220px
+    top: 20px
+    left: 40%
+    background: url(img/microphone2.svg) center center no-repeat
+
+.detail
+  border-top: 1px solid #DB4441
+  border-bottom: 1px solid #DB4441
+  .ib
+    margin: 10px 0
+    width: 100%
+    background: #DB4441
+    padding: 40px 60px
+    color: #fff
+    font-size: 1.5em
+    letter-spacing: 1px
+    line-height: 2.2em
+    p
+      margin-bottom: 60px
+
