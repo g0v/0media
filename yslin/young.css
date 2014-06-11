@@ -38,8 +38,16 @@ uiload {
     .avatar .ib img {
       width: 100%;
       opacity: 0; }
+  .avatar .p1 {
+    background-image: url(img/young/p1.png); }
+  .avatar .p2 {
+    background-image: url(img/young/p2.png); }
+  .avatar .p3 {
+    background-image: url(img/young/p3.png); }
   .avatar .p4 {
     background-image: url(img/young/p4.png); }
+  .avatar .p5 {
+    background-image: url(img/young/p5.png); }
 
 .detail .avatar {
   position: fixed;
@@ -50,11 +58,12 @@ uiload {
   width: 100px;
   padding: 5px;
   background: white;
+  opacity: 0;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); }
   .detail .avatar .ib {
     background-color: gray; }
 
-.avatar:hover {
+#avatars .avatar:hover {
   opacity: 1 !important;
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); }
 
