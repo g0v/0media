@@ -1,3 +1,9 @@
+uiload {
+  display: inline-block;
+  position: relative; }
+  uiload > div {
+    position: relative; }
+
 #avatars {
   width: 80%;
   position: fixed;
@@ -16,7 +22,13 @@
   background: none;
   border: 1px solid #db4441;
   border-radius: 50%;
-  padding: 5%; }
+  padding: 5%;
+  cursor: pointer;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s; }
   .avatar .ib {
     width: 100%;
     height: 100%;
@@ -28,6 +40,10 @@
       opacity: 0; }
   .avatar .p4 {
     background-image: url(img/young/p4.png); }
+
+.avatar:hover {
+  opacity: 1 !important;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); }
 
 .brief {
   padding: 10px 20px 20px;
@@ -65,14 +81,20 @@
     background-image: url(img/caption-speaker2.svg); }
 
 .yng-author {
-  width: 100%;
+  width: 80%;
   padding: 5px;
   border-bottom: 1px solid #db4441;
   height: 220px;
-  position: relative; }
+  position: relative;
+  left: 10%; }
   .yng-author .ib {
     position: absolute;
-    bottom: 10px; }
+    bottom: 10px;
+    font-size: 1.2em;
+    color: #444444; }
+  .yng-author .ib.right {
+    right: 10px;
+    text-align: right; }
   .yng-author .yng-author-mic {
     position: absolute;
     width: 90px;
@@ -82,29 +104,31 @@
     background: url(img/microphone2.svg) center center no-repeat; }
 
 #yng-author-p1 .yng-author-mic {
-  left: 15%; }
+  left: 5%; }
 
 #yng-author-p2 .yng-author-mic {
-  left: 32%;
+  left: 27%;
   margin-left: -20px; }
 
 #yng-author-p3 .yng-author-mic {
-  left: 50%;
+  left: 49%;
   margin-left: -43px; }
 
 #yng-author-p4 .yng-author-mic {
-  left: 67%;
+  left: 72%;
   margin-left: -67px; }
 
 #yng-author-p5 .yng-author-mic {
-  left: 85%;
+  left: 93%;
   margin-left: -90px; }
 
 .detail {
   position: relative;
   z-index: 10;
   border-top: 1px solid #db4441;
-  border-bottom: 1px solid #db4441; }
+  border-bottom: 1px solid #db4441;
+  width: 80%;
+  left: 10%; }
   .detail .ib {
     margin: 10px 0;
     width: 100%;
@@ -122,5 +146,5 @@
   width: 100%; }
 
 .yng-p {
-  height: 4000px;
+  height: 1600px;
   background: none; }
