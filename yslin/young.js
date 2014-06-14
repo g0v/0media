@@ -5,11 +5,20 @@ young = function($scope){
   $scope.tgltab = function(it){
     return $scope.tab = it;
   };
+  $scope.tocontent = function(){
+    return $(document.body).animate({
+      scrollTop: 3815
+    });
+  };
+  $scope.tomenu = function(){
+    return $(document.body).animate({
+      scrollTop: 2815
+    });
+  };
   $scope.sb = function(){
-    $(document.body).animate({
+    return $(document.body).animate({
       scrollTop: 2500
     });
-    return console.log('ok');
   };
   return skrollr.init({
     forceHeight: false,

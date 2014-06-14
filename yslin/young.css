@@ -62,7 +62,7 @@ uiload {
 .detail .avatar {
   position: fixed;
   z-index: 301;
-  top: 100px;
+  bottom: 100px;
   right: 10%;
   margin-right: 30px;
   width: 100px;
