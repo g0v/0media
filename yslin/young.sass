@@ -2,11 +2,10 @@
 
 #avatars
   width: 80%
-  position: fixed
+  position: relative
   top: 100px
-  left: 10%
   z-index: 8
-  margin-top: 60px
+  margin: 60px auto 0
 #avatars .item
   width: 14%
   margin: 3%
@@ -43,19 +42,46 @@
   border: 1px solid #DB4441
   .ib
     background-color: #DB4441
-.detail .avatar
+
+#small-avatars
   position: fixed
   z-index: 301
   bottom: 100px
   right: 10%
-  margin-right: 30px
+  margin-right: 10px
+  .desc
+    display: block
+    text-align: right
+    margin-top: 10px
+    padding-top: 5px
+    width: 0
+    overflow: hidden
+    white-space: nowrap
+    position: absolute
+    border-top: 1px solid #ccc
+    right: 0
+    opacity: 0
+    @include transition(all 1s)
+  .avatar
+    @include transition(all 1s)
+    display: inline-block
+    width: 0
+    height: 0
+    padding: 0
+    border: 0
+    background: #fff
+    .ib
+      background-color: rgba(128,128,128,1)
+
+#small-avatars.active .desc
+  opacity: 1
+  width: 200px
+#small-avatars.active .avatar, #small-avatars .avatar.active
   width: 100px
+  height: 100px
   padding: 5px
-  background: #fff
-  opacity: 0
+  border: 1px solid #ccc
   box-shadow: 0 3px 6px rgba(0,0,0,0.3)
-  .ib
-    background-color: rgba(128,128,128,1)
 
 #avatars .avatar:hover
   opacity: 1!important
@@ -153,11 +179,13 @@
     p
       margin-bottom: 60px
 
-#yng-c-sep
+#yng-c-sep, #yng-c-sep2
   width: 100%
   height: 2px
-  top: 1200px
   position: relative
+#yng-c-sep
+  top: 400px
+#yng-c-sep2
 
 .hl-yng
   position: absolute
@@ -167,7 +195,7 @@
 .hl-yng.show
   opacity: 1
 .yng-p
-  height: 1000px
+  height: 250px
   background: none
 .yng-r
   display: none
