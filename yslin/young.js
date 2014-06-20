@@ -10,14 +10,15 @@ young = function($scope, $timeout){
   };
   $scope.tomenu = function(tab){
     $(document.body).animate({
-      scrollTop: 2700
-    }, 2000);
+      scrollTop: $(".avatar .ib.p1").offset().top - 100
+    });
+    $('#small-avatars').removeClass('active');
     return $scope.tgltab(tab);
   };
   $scope.sb = function(){
     return $(document.body).animate({
       scrollTop: 2500
-    }, 2000);
+    });
   };
   $scope.skrollr = skrollr.init({
     forceHeight: false,

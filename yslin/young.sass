@@ -109,6 +109,8 @@
   color: #DB4441
   width: 100%
   text-align: center
+  font-weight: 800
+  text-shadow: 0 1px 3px rgba(208,68,65,0.5)
   &:before, &:after
     display: inline-block
     content: " "
@@ -120,6 +122,18 @@
     background-image: url(img/caption-speaker1.svg)
   &:after
     background-image: url(img/caption-speaker2.svg)
+
+@media (max-width: 1200px)
+  .caption
+    font-size: 2.4em
+@media (max-width: 1024px)
+  .caption
+    font-size: 2em
+@media (max-width: 880px)
+  .caption
+    font-size: 1.6em
+    &:before, &:after
+      width: 40px
 
 .yng-author
   width: 80%
@@ -139,11 +153,11 @@
 
   .yng-author-mic
     position: absolute
-    width: 90px
+    width: 10%
     height: 220px
-    top: 20px
+    bottom: -20px
     left: 40%
-    background: url(img/microphone2.svg) center center no-repeat
+    background: url(img/microphone2.svg) center bottom no-repeat
 
 #yng-author-p1 .yng-author-mic
   left: 5%
@@ -198,7 +212,7 @@
   height: 250px
   background: none
 .yng-r
+  margin-bottom: 110px
   display: none
 .yng-r.show
   display: block
-
