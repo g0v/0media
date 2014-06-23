@@ -4,6 +4,9 @@ uiload {
   uiload > div {
     position: relative; }
 
+#cmp {
+  margin-bottom: 100px; }
+
 #clock {
   position: relative; }
   #clock img {
@@ -37,10 +40,21 @@ uiload {
   -o-transform: rotate(45deg) translate(15px, 0);
   transform: rotate(45deg) translate(15px, 0); }
 
+#timebar-anchor {
+  height: 180px; }
+
 #timebar {
-  width: 80%;
-  margin: 0 auto;
-  position: relative; }
+  position: fixed;
+  background: white;
+  width: 100%;
+  left: 0%;
+  height: 100px;
+  z-index: 10;
+  margin-top: 56px; }
+  #timebar > .ib {
+    position: relative;
+    width: 80%;
+    margin: 0 auto; }
   #timebar #mark-left, #timebar #mark-right {
     position: absolute;
     width: 80px; }
@@ -111,7 +125,8 @@ uiload {
   .cmp-s-left .hr {
     border-bottom: 1px solid #db4441; }
   .cmp-s-left img.b {
-    border: 15px solid #db4441; }
+    border: 15px solid #db4441;
+    min-height: 332px; }
 
 .row .rel {
   position: relative; }

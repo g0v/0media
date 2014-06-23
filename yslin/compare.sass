@@ -1,4 +1,6 @@
 @import basic
+#cmp
+  margin-bottom: 100px
 #clock
   position: relative
   img
@@ -24,10 +26,20 @@
   margin: -50px 0 0 -50px
   @include transform(rotate(45deg) translate(15px,0))
 
+#timebar-anchor
+  height: 180px
 #timebar
-  width: 80%
-  margin: 0 auto
-  position: relative
+  position: fixed
+  background: #fff
+  width: 100%
+  left: 0%
+  height: 100px
+  z-index: 10
+  margin-top: 56px
+  & > .ib
+    position: relative
+    width: 80%
+    margin: 0 auto
   #mark-left, #mark-right
     position: absolute
     width: 80px
@@ -99,6 +111,7 @@
     border-bottom: 1px solid #db4441
   img.b
     border: 15px solid #db4441
+    min-height: 332px
 
 .row .rel
   position: relative

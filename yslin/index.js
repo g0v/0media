@@ -25,8 +25,10 @@ main = function($scope, $timeout){
       return $scope.video.pause();
     }
   };
-  return skrollr.init({
-    forceHeight: false,
-    render: $scope.render
-  });
+  return setTimeout(function(){
+    return skrollr.init({
+      forceHeight: false,
+      render: $scope.render
+    });
+  }, 1000);
 };
