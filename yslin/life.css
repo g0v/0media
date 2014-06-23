@@ -1,0 +1,24 @@
+#candle {
+  height: 100%;
+  width: 100%;
+  border: 1px solid red;
+  position: absolute; }
+  #candle img {
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    margin-left: -100px; }
+
+#author {
+  width: 100%;
+  margin: 50px auto;
+  color: #808285;
+  font-size: 1.2em;
+  text-align: center; }
+
+.full {
+  width: 100%;
+  background: black center center no-repeat;
+  background-size: cover; }
+  .full img.ratio {
+    width: 100%; }

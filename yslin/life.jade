@@ -1,0 +1,42 @@
+doctype html
+//- basic libraries: jquery(1.10.2), d3js(3.3.11), angularjs(1.2.3), bootstrap(3.0)/semantic-ui(0.9.3/0.9.5)
+- var usecdn = false
+- var useog = false
+- var lib = { jquery: true, d3js: true, angular: true, bootstrap: true, semantic: false }
+- var assets = "assets"
+- var thumbnail = "http://dummy.thumbnail"
+html(lang="en")
+  head(prefix="og: http://ogp.me/ns#")
+    meta(charset="utf-8")
+    title template
+    // libraries
+    include library.jade
+    // custom files
+    link(rel="stylesheet",type="text/css",href="index.css")
+    link(rel="stylesheet",type="text/css",href="life.css")
+    script(type="text/javascript",src="index.js")
+    script(type="text/javascript",src="skrollr.min.js")
+  body#body(ng-app,ng-controller="main")
+    .navbar.navbar-inverse.navbar-fixed-top(role="navigation")
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(href="#") 失落的年代 林義雄數位專輯
+        .collapse.navbar-collapse
+          ui.nav.navbar-nav
+    #content.cmp
+      #fear fear
+      .section-headline#sh1: .main(data-anchor-target="#sh1",data-bottom-top="opacity:1;top:100%",data-100-top="opacity:1;top:0%",data-bottom-bottom="top:0%",data-top-bottom="top:-100%")
+        .redline(data-anchor-target="#sh1",data-300-top="margin-left:40%",data--1000-top="margin-left:20%")
+        .ib
+          #candle
+            img#candle-body(src="img/life/candle.svg",data-anchor-target="#sh1",data-bottom-top="top:-200px",data-center-bottom="top:50px")
+            img#ribbon(src="img/life/ribbon-all.svg",data-anchor-target="#sh1",data-bottom-top="top:500px",data-center-bottom="top:50px")
+
+          img.linex4(src="img/linex4.svg")
+
+          .title 絕食的老靈魂 - 林義雄
+          .part PART I
+        .redline(data-anchor-target="#sh1",data-300-top="margin-left:0%",data--1000-top="margin-left:20%")
+      #author 吳震威 / 採訪報導
+      .full(style="background-image:url(img/life/pic/1.jpg)")
+        img.ratio(src="img/life/pic/1r.png")
