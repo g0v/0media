@@ -5,6 +5,8 @@ doctype html
 - var lib = { jquery: true, d3js: true, angular: true, bootstrap: true, semantic: false }
 - var assets = "assets"
 - var thumbnail = "http://dummy.thumbnail"
+mixin imgframe(name,size)
+  .img.f(style="background-image:url(img/life/pic/"+name+"@"+size+".jpg)"): img(src="img/life/pic/"+size+".png")
 mixin ymk(idv,yr,ev,i)
   .ym(id="y"+idv,data-anchor-target="#ya"+idv,data--3000-bottom-top="top:100%;font-size:0.5rem",data-center-center="top:50%;font-size:1.2rem",data-3000-top-bottom="top:-10%;font-size:0.5rem")
     if(ev)
@@ -75,11 +77,11 @@ html(lang="en")
           +ymk("2000","2000-2009")
 
         .norm-container: .ib
-          img.f(src="img/life/pic/2@9x5.jpg")
+          +imgframe("2", "9x5")
           #ya1975
           .desc 林義雄擔任省議員時期。翻攝自：《走向美麗島－戰後反對意識的萌芽》
           .hr
-          img.f(src="img/life/pic/3.jpg")
+          +imgframe("3","7x5")
           .desc 林義雄擔任省議員時為黨外候選人助選。 翻攝自：《走向美麗島－戰後反對意識的萌芽》
           br
           br

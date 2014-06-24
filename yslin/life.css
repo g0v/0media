@@ -109,9 +109,12 @@
 .norm-container .ib {
   margin: 0 20% 0 40%;
   padding: 20px 0 30px 30px; }
-.norm-container img.f {
+.norm-container .img.f {
   width: 100%;
-  margin: 20px 0; }
+  margin: 20px 0;
+  background-size: cover; }
+  .norm-container .img.f img {
+    width: 100%; }
 .norm-container .para {
   letter-spacing: 2px;
   line-height: 1.7em;
