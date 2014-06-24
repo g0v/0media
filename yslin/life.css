@@ -96,9 +96,10 @@
     color: black;
     max-width: 200px;
     font-size: 2em;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); }
+    text-shadow: 0 0 3px white; }
   .ym .desc.inverse {
-    color: white; }
+    color: white;
+    text-shadow: 0 0 3px black; }
 
 .norm-container .desc {
   color: #808285;
