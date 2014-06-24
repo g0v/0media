@@ -17,8 +17,122 @@
   text-align: center; }
 
 .full {
+  position: relative;
   width: 100%;
   background: black center center no-repeat;
   background-size: cover; }
   .full img.ratio {
     width: 100%; }
+  .full .para {
+    position: absolute;
+    right: 10%;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    color: white;
+    letter-spacing: 2px;
+    line-height: 1.7em;
+    font-size: 1.5em; }
+
+#life-f1 {
+  z-index: 13; }
+
+#life-f1 h2, #life-f4 h2 {
+  margin-top: 70%; }
+
+.full-container {
+  position: absoute; }
+
+#life-f2 h2, #life-f3 h2 {
+  margin-top: 20%; }
+
+#life-main .hr, #life-main .shr {
+  margin: 40px 0;
+  width: 100%;
+  border-bottom: 1px solid #808285; }
+#life-main .shr {
+  margin: 10px 0; }
+
+#life-timeline {
+  position: absolute;
+  z-index: 12;
+  width: 40%;
+  height: 100%; }
+
+#life-redline {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  left: 140px;
+  border-left: 1px solid #db4441; }
+
+#life-ptr {
+  position: fixed;
+  top: 50%;
+  left: 10px;
+  margin-top: -10px;
+  width: 100px;
+  z-index: 11; }
+
+.ym {
+  position: fixed;
+  left: 120px;
+  z-index: 11; }
+  .ym img {
+    width: 40px;
+    margin-top: 10px;
+    position: absolute; }
+  .ym .year, .ym .desc {
+    margin-left: 60px; }
+  .ym .year {
+    color: #db4441;
+    font-size: 3em;
+    height: 60px;
+    line-height: 60px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); }
+  .ym .desc {
+    color: black;
+    max-width: 200px;
+    font-size: 2em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); }
+  .ym .desc.inverse {
+    color: white; }
+
+.norm-container .desc {
+  color: #808285;
+  font-size: 1.2em;
+  letter-spacing: 1px; }
+.norm-container .ib {
+  margin: 0 20% 0 40%;
+  padding: 20px 0 30px 30px; }
+.norm-container img.f {
+  width: 100%;
+  margin: 20px 0; }
+.norm-container .para {
+  letter-spacing: 2px;
+  line-height: 1.7em;
+  font-size: 1.5em;
+  margin-bottom: 24px; }
+
+#life-summary h1 {
+  text-align: center;
+  background: url(img/life/hl-stripe.png) center center repeat-x;
+  margin-bottom: 10%; }
+  #life-summary h1 div {
+    display: inline-block;
+    background: white;
+    padding: 0 20px; }
+#life-summary .norm-container {
+  width: 80%;
+  margin: 0 auto 50px; }
+#life-summary .desc, #life-summary .para {
+  width: 80%;
+  margin: 0 auto 40px; }
+#life-summary .icon-ribbon {
+  display: block;
+  width: 10%;
+  margin: 20px auto 50px; }
+#life-summary img.f.b {
+  border: 20px solid #db4441; }
