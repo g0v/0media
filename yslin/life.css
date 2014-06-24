@@ -25,19 +25,30 @@
     width: 100%; }
   .full .para {
     position: absolute;
-    right: 10%;
+    right: 8%;
     top: 0;
-    width: 40%;
+    width: 32%;
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
     padding: 40px;
     color: white;
     letter-spacing: 2px;
-    line-height: 1.7em;
-    font-size: 1.5em; }
+    line-height: 1.8em;
+    font-size: 1.2em; }
 
+@media (max-width: 1024px) {
+  .full .para {
+    font-size: 0.5em; }
+
+  .full .desc {
+    font-size: 0.4em; } }
 #life-f1 {
   z-index: 13; }
+  #life-f1 .desc {
+    font-size: 0.8em;
+    line-height: 1.6em; }
+  #life-f1 ul {
+    padding-left: 0; }
 
 #life-f1 h2, #life-f4 h2 {
   margin-top: 70%; }
@@ -45,14 +56,23 @@
 .full-container {
   position: absoute; }
 
-#life-f2 h2, #life-f3 h2 {
-  margin-top: 20%; }
+@media (max-width: 1200px) {
+  #life-f1 h2 {
+    margin-top: 10%; } }
+@media (max-width: 1024px) {
+  #life-f1 .para {
+    font-size: 0.5em; }
 
-#life-main .hr, #life-main .shr {
+  #life-f1 .desc {
+    font-size: 0.4em; } }
+#life-f2 h2, #life-f3 h2 {
+  margin-top: 10%; }
+
+#life-main .hr, #life-main .shr, #life-f1 .hr, #life-f1 .shr {
   margin: 40px 0;
   width: 100%;
   border-bottom: 1px solid #808285; }
-#life-main .shr {
+#life-main .shr, #life-f1 .shr {
   margin: 10px 0; }
 
 #life-timeline {
@@ -105,7 +125,8 @@
 .norm-container .desc {
   color: #808285;
   font-size: 1.2em;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  margin-bottom: 20px; }
 .norm-container .ib {
   margin: 0 20% 0 40%;
   padding: 20px 0 30px 30px; }
@@ -121,6 +142,11 @@
   font-size: 1.5em;
   margin-bottom: 24px; }
 
+@media (max-width: 1024px) {
+  .norm-container .desc {
+    font-size: 0.7em; }
+  .norm-container .para {
+    font-size: 1em; } }
 #life-summary h1 {
   text-align: center;
   background: url(img/life/hl-stripe.png) center center repeat-x;
@@ -141,3 +167,9 @@
   margin: 20px auto 50px; }
 #life-summary .img.f.b {
   border: 20px solid #db4441; }
+
+@media (max-width: 900px) {
+  #life-main .hr, #life-f1 .hr {
+    margin: 15px 0; }
+  #life-main .shr, #life-f1 .shr {
+    margin: 7px; } }
