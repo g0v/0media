@@ -1,13 +1,12 @@
 #candle {
   height: 100%;
   width: 100%;
-  border: 1px solid red;
   position: absolute; }
   #candle img {
     position: absolute;
-    width: 200px;
+    width: 100px;
     left: 50%;
-    margin-left: -100px; }
+    margin-left: -50px; }
 
 #author {
   width: 100%;
@@ -56,18 +55,23 @@
 .full-container {
   position: absoute; }
 
+#life-f2 h2, #life-f3 h2 {
+  margin-top: 10%; }
+
 @media (max-width: 1200px) {
   #life-f1 h2 {
-    margin-top: 10%; } }
+    margin-top: 10%; }
+
+  #life-f4 .para {
+    padding-top: 15px; }
+  #life-f4 h2 {
+    display: none; } }
 @media (max-width: 1024px) {
   #life-f1 .para {
     font-size: 0.5em; }
 
   #life-f1 .desc {
     font-size: 0.4em; } }
-#life-f2 h2, #life-f3 h2 {
-  margin-top: 10%; }
-
 #life-main .hr, #life-main .shr, #life-f1 .hr, #life-f1 .shr {
   margin: 40px 0;
   width: 100%;
@@ -115,13 +119,28 @@
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); }
   .ym .desc {
     color: black;
-    max-width: 200px;
-    font-size: 2em;
+    max-width: 225px;
+    font-size: 1.4em;
     text-shadow: 0 0 3px white; }
   .ym .desc.inverse {
     color: white;
     text-shadow: 0 0 3px black; }
 
+@media (max-width: 800px) {
+  #life-timeline {
+    font-size: 0.6em; }
+
+  #life-ptr {
+    width: 60px; }
+
+  #life-redline {
+    left: 90px; }
+
+  .ym {
+    left: 70px; }
+    .ym .desc {
+      margin-top: -20px;
+      max-width: 180px; } }
 .norm-container .desc {
   color: #808285;
   font-size: 1.2em;

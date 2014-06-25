@@ -1,13 +1,12 @@
 #candle
   height: 100%
   width: 100%
-  border: 1px solid #f00
   position: absolute
   img
     position: absolute
-    width: 200px
+    width: 100px
     left: 50%
-    margin-left: -100px
+    margin-left: -50px
 
 #author
   width: 100%
@@ -55,18 +54,23 @@
 .full-container
   position: absoute
 
+#life-f2, #life-f3
+  h2
+    margin-top: 10%
+
 @media (max-width: 1200px)
   #life-f1 h2
     margin-top: 10%
+  #life-f4
+    .para
+      padding-top: 15px
+    h2
+      display: none
 @media (max-width: 1024px)
   #life-f1 .para
     font-size: 0.5em
   #life-f1 .desc
     font-size: 0.4em
-
-#life-f2, #life-f3
-  h2
-    margin-top: 10%
 
 #life-main, #life-f1
   .hr, .shr
@@ -94,7 +98,6 @@
   margin-top: -10px
   width: 100px
   z-index: 11
-
 .ym
   position: fixed
   left: 120px
@@ -113,12 +116,26 @@
     text-shadow: 1px 1px 3px rgba(0,0,0,0.4)
   .desc
     color: #000
-    max-width: 200px
-    font-size: 2.0em
+    max-width: 225px
+    font-size: 1.4em
     text-shadow: 0 0 3px rgba(255,255,255,1)
   .desc.inverse
     color: #fff
     text-shadow: 0 0 3px rgba(0,0,0,1)
+
+@media (max-width: 800px)
+  #life-timeline
+    font-size: 0.6em
+  #life-ptr
+    width: 60px
+  #life-redline
+    left: 90px
+  .ym
+    left: 70px
+    .desc
+      margin-top: -20px
+      max-width: 180px
+
 .norm-container
   .desc
     color: #808285
