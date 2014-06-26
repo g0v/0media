@@ -5,6 +5,14 @@ doctype html
 - var lib = { jquery: true, d3js: true, angular: true, bootstrap: true, semantic: false }
 - var assets = "assets"
 - var thumbnail = "http://dummy.thumbnail"
+mixin fixbk(pid,pr)
+  .full
+    .full-bk(id="life-fb"+pid,style="background-image:url(img/life/pic/"+pid+"@"+pr+".jpg);",data-anchor-target="#life-ff"+pid,data-bottom-top="top:100%",data-top-top="top:0%",data-bottom-bottom="top:0%",data-top-bottom="top:-100%")
+    .full-fk(id="life-ff"+pid)
+      //-deprecated, retain block aspect ratio
+      //-img.ratio(src="img/life/pic/"+pr+".png")
+      block
+ 
 mixin imgframe(name,size,c)
   .img.f(class=c,style="background-image:url(img/life/pic/"+name+"@"+size+".jpg)"): img(src="img/life/pic/"+size+".png")
 mixin ymk(idv,yr,ev,ev2,i)
@@ -53,8 +61,7 @@ html(lang="en")
           .part PART I
         .redline(data-anchor-target="#life-sh",data-bottom-bottom="margin-left:0%",data-center-center="margin-left:20%")
       #author 吳震威 / 採訪報導
-      .full#life-f1(style="background-image:url(img/life/pic/1@4x3.jpg)")
-        img.ratio(src="img/life/pic/4x3.png")
+      +fixbk("1","4x3")
         .para
           h2 早年生平
           ul
@@ -69,6 +76,7 @@ html(lang="en")
             | 圖為1976年1月6日，林義雄、姚嘉文以律師身份，為郭雨新向其對手林榮三提出「當選無效訴訟」。
             br
             | 原圖出自《綠色年代—台灣民主運動25年》，邱萬興先生提供。
+
       #life-main
         #life-timeline(data-anchor-target="#life-main",data-100-bottom-top="opacity:0",data-bottom-top="opacity:1",data-bottom-bottom="opacity:1",data-center-bottom="opacity:0")
           img#life-ptr(src="img/life/pointer.svg")
@@ -98,16 +106,14 @@ html(lang="en")
             | 1977年，林義雄在宜蘭縣以第一高票當選第六屆台灣省議會議員。他也放棄律師業務，全心投入省議員工作。以犀利質詢風格著稱，林義雄屢次在議會中挑戰當時省主席林洋港，要求政府應將人民視為主人服侍，達到為民服務精神，他也強調應完善選舉制度，交還人民應有權利。然而，這樣衝撞體制的精神，卻也埋下日後被執政當局特別關注的伏筆。
 
         .full-container
-          .full#life-f2(style="background-image:url(img/life/pic/4@4x3.jpg)")
-            img.ratio(src="img/life/pic/4x3.png")
+          +fixbk("4","4x3")
             .para
               h2
               | 1979年8月，《美麗島雜誌》正式創刊，網羅當時黨外人士以激進、批判的精神，追求言論自由、挑戰執政當局，林義雄也於當時擔任雜誌發行管理人。雜誌發行後引起廣大迴響，每期銷售量屢創新高，最高曾達到一期14萬冊的銷售量，卻也引來執政當局的關注。
               .hr
               | 圖為1979年，美麗島雜誌社內開會情形。影像提供：施明德基金會。
 
-          .full#life-f3(style="background-image:url(img/life/pic/5@4x3.jpg)")
-            img.ratio(src="img/life/pic/4x3.png")
+          +fixbk("5","4x3")
             .para
               h2#ya1979
               | 1979年12月10日，美麗島雜誌社成員為核心的黨外人士，以世界人權日之由舉辦紀念會及遊行。組織群眾進行遊行示威，訴求民主自由，卻發生激烈的警民衝突。國民黨當時亦派軍警全面鎮壓，意圖利用此一事件，將黨外領袖與反對執政黨人士一網打盡。林義雄本人雖然並未參與遊行或是上台演說，僅應康寧祥之邀，趕至高雄向群眾致意。然而，12月13日的逮捕行動，警方並沒有放過林義雄，以其為《美麗島雜誌》五人小組成員的身分，涉嫌叛亂逮捕入獄，並服監於景美軍事看守所（現今的景美人權文化園區）。
@@ -115,6 +121,7 @@ html(lang="en")
               | 圖為美麗島雜誌社員合影。
               br
               | 影像提供：施明德基金會。
+
         .norm-container: .ib
           +imgframe("6","3x4")
           .desc 林義雄一家人合影。圖片提供：慈林教育基金會。
@@ -133,15 +140,15 @@ html(lang="en")
             | 1980年2月28日，林義雄的母親及兩名雙胞胎女兒被殺害，長女林奐均則身中六刀，經送醫後，逃過一劫。血案至今尚未偵破，並留下諸多疑點。因為此案發生於敏感的時間點，大多數人認為當時國民黨有意藉此事殺雞儆猴、警告人民。然而，此事件的發生，並未使台灣人民因為懼怕而漠視，反而更積極關心政治；也引起國際人士對於美麗島相關事件的高度關注。
           #ya1980
 
-        .full-container: .full#life-f4(style="background-image:url(img/life/pic/10@4x3.jpg)")
-          img.ratio(src="img/life/pic/4x3.png")
-          .para
-            h2
-            | 1980年3月18日美麗島大審，在美國為首的國際壓力下，除國際媒體報導外，政府甚至允許國內報紙刊載整起審訊過程。林義雄因家中血案，國民黨同意讓其交保出獄處理喪事，因此並未出席審訊。為母親與女兒尋覓墓地的過程中，跟監人員如影隨形，林義雄遭到重重阻撓，無法洽談到好的安葬地，家人遺體只能暫存於台北市立殯儀館。兩個月後，執政當局以林義雄遊山玩水，沒有認真處理喪事為由，再度拘捕林義雄。美麗島大審判決書中，林義雄被判十二年有期徒刑，並於1984年8月15日獲減刑假釋出獄。
-            .hr
-            | 圖片內容：1985年林義雄母親與女兒的追悼會中，林宅血案的哀傷仍舊，當時有兩千多名民眾前往拈香。
-            br
-            | 圖片提供：蔡明德。
+        .full-container
+          +fixbk("10","4x3")
+            .para
+              h2
+              | 1980年3月18日美麗島大審，在美國為首的國際壓力下，除國際媒體報導外，政府甚至允許國內報紙刊載整起審訊過程。林義雄因家中血案，國民黨同意讓其交保出獄處理喪事，因此並未出席審訊。為母親與女兒尋覓墓地的過程中，跟監人員如影隨形，林義雄遭到重重阻撓，無法洽談到好的安葬地，家人遺體只能暫存於台北市立殯儀館。兩個月後，執政當局以林義雄遊山玩水，沒有認真處理喪事為由，再度拘捕林義雄。美麗島大審判決書中，林義雄被判十二年有期徒刑，並於1984年8月15日獲減刑假釋出獄。
+              .hr
+              | 圖片內容：1985年林義雄母親與女兒的追悼會中，林宅血案的哀傷仍舊，當時有兩千多名民眾前往拈香。
+              br
+              | 圖片提供：蔡明德。
 
         .norm-container: .ib
           +imgframe("11","4x3")
@@ -165,8 +172,7 @@ html(lang="en")
           .para
             | 1984年林義雄假釋出獄後，外界都期待林義雄會以什麼樣的態度回敬執政當局。但他卻突然留下一句「不要看我一時，要看我一生」，遂至美國與家人團聚，並至哈佛大學進修公共行政學碩士學位，並遊學英國、日本，研究政府組織與政治運作。
         .full-container
-          .full#life-f5(style="background-image:url(img/life/pic/14@5x3.jpg)")
-            img.ratio(src="img/life/pic/5x3.png")
+          +fixbk("14","5x3")
             .para
               | 1989年林義雄返台，儘管此時台灣民主面臨鉅變並不斷推進，民主進步黨也已成立，但他並未回歸政壇。
               br
@@ -174,12 +180,12 @@ html(lang="en")
               .hr
               | 1992年4月19日爭取總統直選抗爭運動，林義雄與許信良在臺北車站與群眾喊話。圖片提供：柯金源
 
-          .full#life-f6(style="background-image:url(img/life/pic/15@9x5.jpg)")
-            img.ratio(src="img/life/pic/9x5.png")
+          +fixbk("15","9x5")
             .para
               | 1992年，國民大會在中山樓召開臨時會，爭論是否要修憲以進行總統直選，但遲遲未有進展。林義雄堅決反對當時陸委會副主委馬英九所提之「總統委任直選」，遂以「總統直選」為訴求，發起公民運動，黃信介作為總指揮，號召十萬公民參加。遊行隊伍繞行台北市區後，占領車站前側的忠孝西路，期間長達六天五夜。 最後，警方出動鎮暴警察與憲兵隊驅離民眾，林義雄遭逮捕、黃信介被起訴，這場公民運動雖於當時畫下句點，卻也間接促成四年後的總統直選。
               .hr
               | 1992年4月19日爭取總統直選抗爭運動，群眾佔領忠孝西路與重慶南路口長達六天五夜。圖片提供：柯金源
+
         .norm-container: .ib
           .para#ya1994
             | 1994年，政府決定興建核四廠，林義雄便於當時組織「核四公投促進會」，訴求核四興建與否應交由公投決定，並與反核志工發動「核四公投千里苦行」運動，花費三十五天，風雨無阻繞行台灣一圈，以平和、靜默卻積極的非武力抗爭模式表達訴求。
