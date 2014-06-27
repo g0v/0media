@@ -16,11 +16,25 @@
   text-align: center
 
 .full-bk
-  position: fixed
+  display: none
+.full-bk-top, .full-bk-down, .full-bk-down-inner, .full-bk-fix
+  position: absolute
   width: 100%
   height: 100%
+.full-bk-top, .full-bk-down-inner, .full-bk-fix
   background: #000 center top no-repeat
   background-size: cover
+.full-bk-top
+  z-index: 8
+.full-bk-top.hide
+  display: none
+.full-bk-top.attach
+  position: fixed
+  top: 0
+  left: 0
+.full-bk-down-inner
+  top: -100%
+  z-index: 6
 
 .full-fk
   position: relative
@@ -29,9 +43,7 @@
   background: rgba(0,0,0,0.7)
   min-height: 100%
   padding: 30% 0
-  //img.ratio
-    width: 100%
-    display: none
+  z-index: 9
   .para
     width: 100%
     padding: 40px
