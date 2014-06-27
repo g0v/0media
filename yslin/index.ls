@@ -20,5 +20,4 @@ main = ($scope, $timeout) ->
       forceHeight: false
       render: $scope.render
       smoothScrolling: false
-      smoothScrollingDuration: 50
   , 1000

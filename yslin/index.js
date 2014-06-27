@@ -29,8 +29,7 @@ main = function($scope, $timeout){
     return skrollr.init({
       forceHeight: false,
       render: $scope.render,
-      smoothScrolling: false,
-      smoothScrollingDuration: 50
+      smoothScrolling: false
     });
   }, 1000);
 };

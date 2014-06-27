@@ -6,12 +6,10 @@ doctype html
 - var assets = "assets"
 - var thumbnail = "http://dummy.thumbnail"
 mixin fixbk(pid,pr)
-  .full(style="background:url(img/life/pic/"+pid+"@"+pr+".jpg) top center no-repeat fixed;background-size:cover")
-    .full-bk-top(id="life-fb-t-"+pid,style="background-image:url(img/life/pic/"+pid+"@"+pr+".jpg);",data-anchor-target="#life-ff"+pid,data-1-top-top="@class:full-bk-top",data-top-top="@class:full-bk-top hide",data-bottom-bottom="@class:full-bk-top")
+  .full
+    .full-bk(id="life-fb-"+pid,style="background-image:url(img/life/pic/"+pid+"@"+pr+".jpg);",data-anchor-target="#life-ff"+pid,data-bottom-top="top:100%",data-top-top="top:0%",data-bottom-bottom="top:0%",data-top-bottom="top:-100%")
     .full-fk(id="life-ff"+pid)
       block
-  .full-bk-down(id="life-fb-d-"+pid,data-anchor-target="#life-ff"+pid,data-1-bottom-bottom="@class:full-bk-down hide",data-bottom-bottom="@class:full-bk-down")
-    .full-bk-down-inner(style="background-image:url(img/life/pic/"+pid+"@"+pr+".jpg);")
  
 mixin imgframe(name,size,c)
   .img.f(class=c,style="background-image:url(img/life/pic/"+name+"@"+size+".jpg)"): img(src="img/life/pic/"+size+".png")
