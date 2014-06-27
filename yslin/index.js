@@ -28,7 +28,9 @@ main = function($scope, $timeout){
   return setTimeout(function(){
     return skrollr.init({
       forceHeight: false,
-      render: $scope.render
+      render: $scope.render,
+      smoothScrolling: false,
+      smoothScrollingDuration: 50
     });
   }, 1000);
 };

@@ -16,5 +16,9 @@ main = ($scope, $timeout) ->
     if s + wh > top and s < top + h and $scope.video.paused => $scope.video.play!
     if s > top + h and !$scope.video.paused => $scope.video.pause!
   setTimeout ->
-    skrollr.init({forceHeight: false, render: $scope.render})
+    skrollr.init do
+      forceHeight: false
+      render: $scope.render
+      smoothScrolling: false
+      smoothScrollingDuration: 50
   , 1000
