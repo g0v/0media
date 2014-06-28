@@ -214,10 +214,11 @@ log = (error, stdout, stderr) -> if "#{stdout}\n#{stderr}".trim! => console.log 
 update-file = ->
   [type,cmd] = [ftype(it), ""]
   if /navbar.sass/exec it => it = it.replace /navbar\.sass/, "index.sass"
+  des = it.replace /\/src\//, (if type==\jade => "/" else "/s/")
   if type == \other => return
-  if type == \ls => cmd = "#{ls} -cb #{it}"
-  if type == \sass => cmd = "#{sass} #{it} #{it.replace /\.sass$/, \.css}"
-  if type == \jade => cmd = "#{jade} -P #{it}"
+  if type == \ls => cmd = "#{ls} -cb #{it} -o #{path.dirname des}"
+  if type == \sass => cmd = "#{sass} #{it} #{des.replace /\.sass$/, \.css}"
+  if type == \jade => cmd = "#{jade} -P #{it} -o #{path.dirname it}"
   if cmd =>
     console.log "[BUILD] #{cmd}"
     child_process.exec cmd, log

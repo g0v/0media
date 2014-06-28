@@ -1,0 +1,182 @@
+uiload {
+  display: inline-block;
+  position: relative; }
+  uiload > div {
+    position: relative; }
+
+#cmp {
+  margin-bottom: 100px; }
+
+#clock {
+  position: relative; }
+  #clock img {
+    position: absolute; }
+
+#clock-base {
+  width: 140px;
+  left: 50%;
+  margin: 30px 0 0 -70px; }
+
+#clock-center {
+  width: 70px;
+  left: 50%;
+  top: 100px;
+  margin: -35px 0 0 -35px; }
+
+#clock-minute {
+  width: 70px;
+  left: 50%;
+  top: 100px;
+  margin: -35px 0 0 -35px; }
+
+#clock-second {
+  width: 70px;
+  left: 50%;
+  top: 100px;
+  margin: -35px 0 0 -35px;
+  -ms-transform: rotate(45deg) translate(15px, 0);
+  -moz-transform: rotate(45deg) translate(15px, 0);
+  -webkit-transform: rotate(45deg) translate(15px, 0);
+  -o-transform: rotate(45deg) translate(15px, 0);
+  transform: rotate(45deg) translate(15px, 0); }
+
+#timebar-anchor {
+  height: 180px; }
+
+#timebar {
+  position: fixed;
+  background: white;
+  width: 100%;
+  left: 0%;
+  height: 100px;
+  z-index: 10;
+  margin-top: 56px; }
+  #timebar > .ib {
+    position: relative;
+    width: 80%;
+    margin: 0 auto; }
+  #timebar #mark-left, #timebar #mark-right {
+    position: absolute;
+    width: 80px; }
+  #timebar #mark-left {
+    left: -80px; }
+  #timebar #mark-right {
+    right: -80px; }
+  #timebar #mark-mix {
+    position: absolute;
+    width: 30px;
+    left: 50%;
+    margin: -15px 0 0 -15px;
+    top: 40px; }
+  #timebar #bar-left, #timebar #bar-right {
+    position: absolute;
+    top: 40px;
+    width: 45%;
+    height: 10px;
+    margin-top: -5px;
+    border: 1px solid #db4441; }
+    #timebar #bar-left .ib, #timebar #bar-right .ib {
+      width: 50%;
+      height: 100%; }
+  #timebar #bar-left {
+    right: 50%;
+    margin-right: 30px; }
+    #timebar #bar-left .ib {
+      position: absolute;
+      left: 0;
+      background: #db4441; }
+  #timebar #bar-right {
+    margin-left: 30px;
+    left: 50%;
+    border: 1px solid black; }
+    #timebar #bar-right .ib {
+      position: absolute;
+      right: 0;
+      background: black; }
+
+.ihl {
+  text-align: center; }
+  .ihl img {
+    height: 120px;
+    margin: 20px auto 80px; }
+
+.cmp-section {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  line-height: 2em; }
+  .cmp-section .hr {
+    margin: 40px auto;
+    width: 95%; }
+  .cmp-section .cmp-ds {
+    color: #808285;
+    font-size: 0.5em;
+    line-height: 1.2em; }
+  .cmp-section img.f {
+    width: 95%;
+    margin: 10px auto;
+    display: block; }
+  .cmp-section .img-desc {
+    font-size: 0.8em; }
+
+.cmp-s-left {
+  color: #db4441; }
+  .cmp-s-left .hr {
+    border-bottom: 1px solid #db4441; }
+  .cmp-s-left img.b {
+    border: 15px solid #db4441;
+    min-height: 332px; }
+
+.row .rel {
+  position: relative; }
+
+.cmp-s-right {
+  color: black; }
+  .cmp-s-right .hr {
+    border-bottom: 1px solid black; }
+  .cmp-s-right img.b {
+    border: 15px solid black; }
+
+#icon-fund, #icon-pen {
+  position: absolute;
+  bottom: 0;
+  width: 160px;
+  left: -230px; }
+
+#icon-fund-bar {
+  display: block;
+  position: absolute;
+  width: 10px;
+  height: 500px;
+  bottom: 0px;
+  left: -40px;
+  background: black; }
+
+#icon-pen {
+  width: 80px;
+  left: -100px; }
+
+#icon-taiwan, #icon-taiwan-bar {
+  display: block;
+  position: absolute;
+  left: 100%;
+  width: 100px;
+  margin-top: -230px; }
+
+#icon-taiwan-bar {
+  border-bottom: 1px solid #db4441;
+  margin-top: -10px;
+  width: 50%; }
+
+#icon-clock {
+  position: absolute;
+  display: block;
+  width: 100px;
+  right: -100%;
+  margin-top: -100px; }
+
+.cmp-ints-hr {
+  width: 60%;
+  margin: 50px auto;
+  border-bottom: 1px solid black; }
