@@ -1,16 +1,19 @@
 body
   letter-spacing: 1px
+#content
+  margin-top: 0
 #land-cover
   width: 100%
   height: 100%
+  min-height: 600px
   background: url(img/landing/cover.jpg) center center no-repeat
   background-size: cover
   text-align: center
-  display: relative
+  position: relative
   margin-bottom: 100px
 #land-headline
   display: inline-block
-  margin-top: 3%
+  margin-top: 20%
   &:before, &:after
     content: " "
     display: block
@@ -26,11 +29,11 @@ body
     padding: 0 25px 10px
     letter-spacing: 4px
     .title
-      font-size: 2.5em
+      font-size: 3.0em
       margin-bottom: 7px
     .subtitle
       letter-spacing: 3px
-      font-size: 1.1em
+      font-size: 1.4em
       img
         width: 20px
         vertical-align: top
@@ -38,18 +41,25 @@ body
   .desc
     color: #fff
     text-shadow: 2px 2px 3px rgba(0,0,0,0.9)
-    font-size: 0.9em
+    font-size: 1.1em
+    letter-spacing: 2px
+    line-height: 1.8em
     background: rgba(0,0,0,0.3)
     border-radius: 50%
     padding: 10px
     margin: 30px
 
 #land-gbk-top, #land-gbk-bottom
+  position: absolute
+  top: 0
+  left: 0
   width: 100%
   min-height: 120px
   padding-top: 44px
   background: url(img/landing/gbk-top.png) center bottom repeat-x
 #land-gbk-bottom
+  top: auto
+  bottom: 0
   background: url(img/landing/gbk-bottom.png) center bottom repeat-x
 #trademark
   img
@@ -68,7 +78,7 @@ body
   margin: 0 auto
   text-align: center
   .para
-    font-size: 0.9em
+    font-size: 1.1em
     margin-bottom: 20px
     line-height: 2em
 #land-main-hl
@@ -100,7 +110,7 @@ body
       font-weight: 900
       border: 1px solid #ccc
       padding: 0 40px 3px
-      font-size: 2em
+      font-size: 2.5em
 
 #credit
   color: #db4441
@@ -114,8 +124,8 @@ body
     border: none
   .title
     font-weight: 900
-    font-size: 1.15em
+    font-size: 1.35em
     margin-bottom: 10px
   .desc
-    font-size: 0.9em
+    font-size: 1em
 
