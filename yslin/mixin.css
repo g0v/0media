@@ -1,0 +1,26 @@
+.full-bk {
+  width: 100%;
+  height: 100%;
+  background: black center top no-repeat;
+  background-size: cover;
+  z-index: 8;
+  position: fixed; }
+
+.full-fk {
+  position: relative;
+  width: 25%;
+  margin-left: 70%;
+  background: rgba(0, 0, 0, 0.7);
+  min-height: 100%;
+  padding: 30% 0;
+  z-index: 9; }
+  .full-fk .para {
+    width: 100%;
+    padding: 40px;
+    color: white;
+    letter-spacing: 2px;
+    line-height: 1.8em;
+    font-size: 1.2em; }
+  .full-fk ul {
+    padding-left: 0;
+    margin: 30px 0; }

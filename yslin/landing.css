@@ -1,0 +1,125 @@
+body {
+  letter-spacing: 1px; }
+
+#land-cover {
+  width: 100%;
+  height: 100%;
+  background: url(img/landing/cover.jpg) center center no-repeat;
+  background-size: cover;
+  text-align: center;
+  display: relative;
+  margin-bottom: 100px; }
+
+#land-headline {
+  display: inline-block;
+  margin-top: 3%; }
+  #land-headline:before, #land-headline:after {
+    content: " ";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.95);
+    margin-bottom: 3px; }
+  #land-headline:after {
+    margin-top: 3px; }
+  #land-headline .ib {
+    color: #db4441;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0 25px 10px;
+    letter-spacing: 4px; }
+    #land-headline .ib .title {
+      font-size: 2.5em;
+      margin-bottom: 7px; }
+    #land-headline .ib .subtitle {
+      letter-spacing: 3px;
+      font-size: 1.1em; }
+      #land-headline .ib .subtitle img {
+        width: 20px;
+        vertical-align: top; }
+
+#land-cover .desc {
+  color: white;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
+  font-size: 0.9em;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  padding: 10px;
+  margin: 30px; }
+
+#land-gbk-top, #land-gbk-bottom {
+  width: 100%;
+  min-height: 120px;
+  padding-top: 44px;
+  background: url(img/landing/gbk-top.png) center bottom repeat-x; }
+
+#land-gbk-bottom {
+  background: url(img/landing/gbk-bottom.png) center bottom repeat-x; }
+
+#trademark img {
+  width: 200px; }
+
+#copyright {
+  border-top: 1px solid white;
+  color: white;
+  font-size: 0.7em;
+  min-width: 200px;
+  display: inline-block;
+  padding: 10px;
+  margin: 5px 0 8px; }
+
+#land-main {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center; }
+  #land-main .para {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    line-height: 2em; }
+
+#land-main-hl {
+  width: 100%;
+  text-align: center;
+  margin: 40px auto;
+  position: relative; }
+  #land-main-hl:before, #land-main-hl:after {
+    display: block;
+    content: " ";
+    width: 100%;
+    height: 2px;
+    background: black;
+    position: absolute;
+    bottom: 20px;
+    z-index: 1; }
+  #land-main-hl:after {
+    background: #aaaaaa;
+    height: 1px;
+    bottom: 16px; }
+  #land-main-hl .ib {
+    background: white;
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    border: 2px solid black;
+    padding: 3px; }
+    #land-main-hl .ib .ib2 {
+      font-weight: 900;
+      border: 1px solid #cccccc;
+      padding: 0 40px 3px;
+      font-size: 2em; }
+
+#credit {
+  color: #db4441;
+  margin: 40px auto;
+  border-top: 1px solid #db4441;
+  border-bottom: 2px solid black;
+  padding: 20px 5px; }
+  #credit .col-sm-3 {
+    border-left: 1px solid #db4441; }
+  #credit .col-sm-3:nth-of-type(1) {
+    border: none; }
+  #credit .title {
+    font-weight: 900;
+    font-size: 1.15em;
+    margin-bottom: 10px; }
+  #credit .desc {
+    font-size: 0.9em; }

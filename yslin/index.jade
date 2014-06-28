@@ -5,6 +5,7 @@ doctype html
 - var lib = { jquery: true, d3js: true, angular: true, bootstrap: true, semantic: false }
 - var assets = "assets"
 - var thumbnail = "http://dummy.thumbnail"
+include mixin.jade
 mixin fractal(x,y,r,n)
   img.fractal(data-anchor-target="#white-sh",data-1-center-center="opacity:0",data-center-center="margin-top:-100px;margin-left:0px;-webkit-transform:rotate(0deg);opacity:1",data-top-center="margin-top:"+y+"px;margin-left:"+x+"px;-webkit-transform:rotate("+r+"deg);opacity:0.4",data-top-bottom="opacity:0",src="img/fractal"+n+".svg")
 mixin timeline-item(name, year, title)
@@ -26,9 +27,10 @@ html(lang="en")
     .navbar.navbar-inverse.navbar-fixed-top(role="navigation")
       .container-fluid
         .navbar-header
-          a.navbar-brand(href="#") 失落的年代 林義雄數位專輯
+          a.navbar-brand(href="#"): img(src="img/landing/eforum.svg")
         .collapse.navbar-collapse
           ui.nav.navbar-nav
+            li 繫上歷史的黃絲帶　　從林義雄禁語抗議回顧那個噤聲的年代
     #content
       #fear fear
       .section-headline#white-sh: .main(data-anchor-target="#white-sh",data-bottom-top="opacity:1;top:100%",data-100-top="opacity:1;top:0%",data-bottom-bottom="top:0%",data-top-bottom="top:-100%")
@@ -105,7 +107,8 @@ html(lang="en")
       .section
         | 台北石碇、汐止交界的鹿窟、白雲山區，位於台北市區東南角，群山環繞，山徑複雜。二二八事件後，台北地區參與抗爭的中共地下黨員，透過老家在鹿窟的陳春慶的引介，陸續上山躲藏。當地的居民，並不排斥來自城市的陌生人。相反的，經過一段時間的相處，他們逐漸成為地下組織的協力者與成員。村長、鄉公所職員、地方角頭，一般的農民、礦工，紛紛參與其中。1949年9月，上級幹部決議，將鹿窟指定為台灣北部的武裝基地。鹿窟基地的保密工作非常健全，1950年開始的肅清，並未發現此一據點。直到1952年12月，官方才知悉鹿窟基地的存在，隨即發動上萬名軍警包圍山區，大肆搜捕相關人員。共計有35人遭到槍決，98人判處有期徒刑，上百人自首自新。經此打擊，鹿窟、玉桂嶺等村落，幾乎全村散離。
       .redheadline: .ib 鹿窟事件起訴書
-      .ff.fixed#luku(style="background-image:url(img/luku.jpg);height:800px")
+      +fixbk("white","luku","2x1")
+      //.ff.fixed#luku(style="background-image:url(img/luku.jpg);height:800px")
 
     .hr-bk
     #high-section
@@ -114,6 +117,12 @@ html(lang="en")
         .year 1954
       .section
         | 吾雍．雅達烏猶卡那，鄒族人，漢名高一生，阿里山鄉鄉長；巴斯勇‧優路拿納，鄒族人，漢名湯守仁，嘉義縣參議員；樂信．瓦旦，泰雅族人，漢名林瑞昌，台灣省參議員，他們是阿里山鄒族與桃園角板山泰雅族的部落菁英。
+      +fixbk("white","iskao","5x3")
+        .para
+          | 1950年前後，由日治時代社會運動者簡吉所領導，隸屬於於台灣省工作委員會的「山地工作委員會」，在高山部落尋求可靠的盟友。當時，中共的少數民族自治政策，與部落尋求原住民自決自治的關懷不謀而合，雙方建立了相當程度的結盟關係。因此，1950年代的阿里山，遂成為北部地下黨員南下躲避的重要據點之一。
+        .para
+          | 1952年，部落菁英與部分山地青年陸續被捕，三人於1954年4月17日槍決。往後的原住民部落，未再形成跨部落的政治力量。一直要等到三十多年後，台灣的原住民運動，才重新喚醒這個早已夭折的自決之夢。
+
       .ff.fixed#iskao(style="background-image:url(img/iskao.jpg)")
         .sections.fixed(data-anchor-target="#iskao",data-bottom-bottom="top:0px",data--1000-bottom-bottom="top:-1000px")
           .section.fixed(data-anchor-target="#iskao",data-100-top="opacity:0",data--600-top="opacity:1",data--1600-top="background:rgba(0,0,0,0.8)",data--2600-top="background:rgba(0,0,0,0.0)")
