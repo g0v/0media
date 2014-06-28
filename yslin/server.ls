@@ -216,9 +216,9 @@ update-file = ->
   if /navbar.sass/exec it => it = it.replace /navbar\.sass/, "index.sass"
   des = it.replace /\/src\//, (if type==\jade => "/" else "/s/")
   if type == \other => return
-  if type == \ls => cmd = "#{ls} -cb #{it} -o #{path.dirname des}"
+  if type == \ls => cmd = "#{ls} -o #{path.dirname des} -cb #{it}"
   if type == \sass => cmd = "#{sass} #{it} #{des.replace /\.sass$/, \.css}"
-  if type == \jade => cmd = "#{jade} -P #{it} -o #{path.dirname it}"
+  if type == \jade => cmd = "#{jade} -P #{it} -o ."
   if cmd =>
     console.log "[BUILD] #{cmd}"
     child_process.exec cmd, log
