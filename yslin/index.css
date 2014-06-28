@@ -35,24 +35,40 @@ uiload {
   background: black; }
 
 #fb-icon a {
-  padding: 8px 10px; }
+  padding: 12px 20px 8px 10px; }
 #fb-icon img {
-  width: 32px;
-  height: 32px; }
+  width: 24px;
+  height: 24px; }
 #fb-icon .ib {
   border-left: 1px solid #999999;
   padding-left: 20px; }
 
+#blah {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: magenta;
+  z-index: 15;
+  border: 1px solid red; }
+  #blah .ib {
+    background: blue;
+    height: 100%;
+    width: 50%; }
+
 .navbar-brand {
-  padding: 11px 0 7px; }
+  padding: 11px 0 0; }
+  .navbar-brand .ib {
+    border-right: 1px solid #999999; }
   .navbar-brand img {
-    border-right: 1px solid #999999;
-    margin-right: 10px;
-    width: 120px;
+    margin: 0 20px;
+    width: 108px;
     height: 32px; }
 
 .navbar.navbar-inverse .navbar-nav > li > a {
-  color: white; }
+  color: white;
+  font-size: 1.1em; }
 
 html, body {
   margin: 0;
@@ -175,7 +191,8 @@ img.key {
   margin: auto; }
 
 #content {
-  margin-top: 52px; }
+  margin-top: 52px;
+  height: 100%; }
 
 .section-headline {
   position: relative; }
