@@ -26,3 +26,17 @@
 .navbar.navbar-inverse .navbar-nav > li > a
   color: #fff
   font-size: 1.1em
+  .navico
+    opacity: 0
+    position: absolute
+    width: 0
+    margin-left: 0
+    width: 80px
+    margin-left: -32px
+    @include transition(all 0.3s)
+    img
+      width: 100%
+  .navico.show
+    opacity: 1
+    width: 80px
+    margin-left: -32px

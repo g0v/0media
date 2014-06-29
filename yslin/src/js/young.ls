@@ -16,6 +16,7 @@ young = ($scope, $timeout) ->
   /*$timeout ->
     $scope.skrollr.refresh!
   , 1000*/
+  $scope.navToggle = null
   $scope.saToggle = false
   $(window).scroll ->
     t = $(window).scrollTop!

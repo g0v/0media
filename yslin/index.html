@@ -14,9 +14,10 @@
     <link rel="stylesheet" type="text/css" href="s/css/main.css">
     <script type="text/javascript" src="assets/skrollr/skrollr.min.js"></script>
     <script type="text/javascript" src="s/js/main.js"></script>
+    <script type="text/javascript" src="s/js/navbar.js"></script>
   </head>
   <body ng-app ng-controller="main">
-    <div role="navigation" class="navbar navbar-inverse navbar-fixed-top">
+    <div role="navigation" ng-controller="navbar" class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header"><a href="#" class="navbar-brand">
             <div class="ib"><img src="img/nav/eforum.png"></div></a></div>
@@ -25,10 +26,14 @@
             <li><a href="#">繫上歷史的黃絲帶　　從林義雄禁語抗議回顧那個噤聲的年代</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">・</a></li>
-            <li><a href="#">・</a></li>
-            <li><a href="#">・</a></li>
-            <li><a href="#">・</a></li>
+            <li><a href="#" ng-click="iconToggle(1)">・
+                <div ng-class="{'show':navToggle==1}" class="navico"><img src="img/nav/s1.png"></div></a></li>
+            <li><a href="#" ng-click="iconToggle(2)">・
+                <div ng-class="{'show':navToggle==2}" class="navico"><img src="img/nav/s2.png"></div></a></li>
+            <li><a href="#" ng-click="iconToggle(3)">・
+                <div ng-class="{'show':navToggle==3}" class="navico"><img src="img/nav/s3.png"></div></a></li>
+            <li><a href="#" ng-click="iconToggle(4)">・
+                <div ng-class="{'show':navToggle==4}" class="navico"><img src="img/nav/s4.png"></div></a></li>
             <li id="fb-icon"><a href="https://www.facebook.com/NtuNewsEForum" target="_blank">
                 <div class="ib"><img src="img/nav/fb.png"></div></a></li>
           </ul>

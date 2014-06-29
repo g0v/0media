@@ -24,6 +24,7 @@ young = function($scope, $timeout){
   /*$timeout ->
     $scope.skrollr.refresh!
   , 1000*/
+  $scope.navToggle = null;
   $scope.saToggle = false;
   return $(window).scroll(function(){
     var t, h, a;

@@ -17,8 +17,9 @@ html(lang="en")
     link(rel="stylesheet",type="text/css",href="s/css/main.css")
     script(type="text/javascript",src="assets/skrollr/skrollr.min.js")
     script(type="text/javascript",src="s/js/main.js")
+    script(type="text/javascript",src="s/js/navbar.js")
   body(ng-app,ng-controller="main")
-    .navbar.navbar-inverse.navbar-fixed-top(role="navigation")
+    .navbar.navbar-inverse.navbar-fixed-top(role="navigation",ng-controller="navbar")
       .container-fluid
         .navbar-header
           a.navbar-brand(href="#"): .ib: img(src="img/nav/eforum.png")
@@ -26,10 +27,18 @@ html(lang="en")
           ul.nav.navbar-nav
             li: a(href="#") 繫上歷史的黃絲帶　　從林義雄禁語抗議回顧那個噤聲的年代
           ul.nav.navbar-nav.navbar-right
-            li: a(href="#") ・
-            li: a(href="#") ・
-            li: a(href="#") ・
-            li: a(href="#") ・
+            li: a(href="#",ng-click="iconToggle(1)") 
+              | ・
+              .navico(ng-class="{'show':navToggle==1}"): img(src="img/nav/s1.png")
+            li: a(href="#",ng-click="iconToggle(2)") 
+              | ・
+              .navico(ng-class="{'show':navToggle==2}"): img(src="img/nav/s2.png")
+            li: a(href="#",ng-click="iconToggle(3)") 
+              | ・
+              .navico(ng-class="{'show':navToggle==3}"): img(src="img/nav/s3.png")
+            li: a(href="#",ng-click="iconToggle(4)") 
+              | ・
+              .navico(ng-class="{'show':navToggle==4}"): img(src="img/nav/s4.png")
             li#fb-icon: a(href="https://www.facebook.com/NtuNewsEForum",target="_blank"): .ib: img(src="img/nav/fb.png")
     #content
       include landing.jade
