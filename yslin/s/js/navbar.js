@@ -18,12 +18,14 @@ navbar = function($scope){
         return false;
       }
     });
-    if (nav.length) {
-      if ($scope.navToggle !== nav[0][1]) {
-        return $scope.$apply(function(){
-          return $scope.navToggle = nav[0][1];
-        });
-      }
+    if (!nav.length && $scope.navToggle) {
+      return $scope.$apply(function(){
+        return $scope.navToggle = 0;
+      });
+    } else if (nav.legnth && $scope.navToggle !== nav[0][1]) {
+      return $scope.$apply(function(){
+        return $scope.navToggle = nav[0][1];
+      });
     }
   });
 };

@@ -58,6 +58,10 @@ uiload {
   border-top: 10px solid #db4441;
   border-left: 1px solid #db4441;
   padding: 10px 0 0 10px; }
+  .img-redframe .comment-right, .img-redframe-r .comment-right {
+    position: absolute;
+    left: 100%;
+    bottom: 0; }
 
 .img-redframe-r {
   border-right: 1px solid #db4441;
@@ -672,6 +676,10 @@ uiload {
   border-top: 10px solid #db4441;
   border-left: 1px solid #db4441;
   padding: 10px 0 0 10px; }
+  .img-redframe .comment-right, .img-redframe-r .comment-right {
+    position: absolute;
+    left: 100%;
+    bottom: 0; }
 
 .img-redframe-r {
   border-right: 1px solid #db4441;

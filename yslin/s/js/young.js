@@ -4,10 +4,7 @@ young = function($scope, $timeout){
   console.log('ok2');
   $scope.tab = 1;
   $scope.tgltab = function(it){
-    $scope.tab = it;
-    return setTimeout(function(){
-      return $scope.skrollr.refresh();
-    }, 1000);
+    return $scope.tab = it;
   };
   $scope.tomenu = function(tab){
     $(document.body).animate({
@@ -21,9 +18,6 @@ young = function($scope, $timeout){
       scrollTop: 2500
     });
   };
-  /*$timeout ->
-    $scope.skrollr.refresh!
-  , 1000*/
   $scope.navToggle = null;
   $scope.saToggle = false;
   return $(window).scroll(function(){

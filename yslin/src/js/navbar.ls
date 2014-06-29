@@ -9,6 +9,6 @@ navbar = ($scope) ->
       x = $(it.0)offset!top
       y = $(it.0)height!
       if (t >= x) and (t <= x + y) => true else false
-    if nav.length => if $scope.navToggle != nav.0.1 => $scope.$apply -> $scope.navToggle = nav.0.1
-
+    if !nav.length and $scope.navToggle => $scope.$apply -> $scope.navToggle = 0
+    else if nav.legnth and $scope.navToggle != nav.0.1 => $scope.$apply -> $scope.navToggle = nav.0.1
 
