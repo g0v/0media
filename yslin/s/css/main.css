@@ -373,6 +373,13 @@ body {
   #credit .desc {
     font-size: 1em; }
 
+@media (max-width: 750px) {
+  #credit .col-sm-3 {
+    text-align: center;
+    padding-top: 20px;
+    border-left: none; }
+  #credit .title {
+    margin-bottom: 3px; } }
 uiload {
   display: inline-block;
   position: relative; }
