@@ -149,13 +149,16 @@ uiload {
   font-size: 0.5em;
   line-height: 1.3em; }
 
-.l4b {
+.l4b, .l4w {
   display: inline-block;
   width: 70px;
   height: 70px;
   margin: 30px;
-  background: url(../../img/l4b.svg) center center no-repeat;
+  background: url(../../img/l4b.png) center center no-repeat;
   background-size: cover; }
+
+.l4w {
+  background: url(../../img/l4w.png) center center no-repeat; }
 
 .chapter-author {
   color: #808285;
@@ -236,7 +239,7 @@ body {
   width: 100%;
   height: 100%;
   min-height: 600px;
-  background: url(../../img/land/cover.jpg) center center no-repeat;
+  background: #808285 url(../../img/land/cover.jpg) center center no-repeat;
   background-size: cover;
   text-align: center;
   position: relative;
@@ -1173,6 +1176,8 @@ img.ico-key {
 
 .section-headline {
   position: relative; }
+  .section-headline .l4w {
+    margin-top: 270px; }
   .section-headline .fractal {
     position: fixed;
     width: 32px;
