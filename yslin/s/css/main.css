@@ -131,6 +131,10 @@ uiload {
     width: 80px;
     margin-left: -32px; }
 
+.anchor {
+  position: relative;
+  top: -90px; }
+
 .todo {
   display: block;
   color: white;
