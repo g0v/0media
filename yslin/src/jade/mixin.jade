@@ -1,5 +1,26 @@
-mixin fixbk(cat,pid,pr)
+mixin fixbk(path,name,ratio,align)
+  -var align = (align?align:"right")
   .full
-    .full-bk(id="life-fb-"+pid,style="background-image:url(img/"+cat+"/pic/"+pid+"@"+pr+".jpg);",data-anchor-target="#life-ff"+pid,data-bottom-top="top:100%",data-top-top="top:0%",data-bottom-bottom="top:0%",data-top-bottom="top:-100%")
-    .full-fk(id="life-ff"+pid)
+    .full-bk(id="life-fb-"+name,style="background-image:url(img/"+path+"/pic/"+name+"@"+ratio+".jpg);",data-anchor-target="#life-ff"+name,data-bottom-top="top:100%",data-top-top="top:0%",data-bottom-bottom="top:0%",data-top-bottom="top:-100%")
+    .full-fk(class="full-fk-"+align,id="life-ff"+name)
       block
+
+mixin chapter-author
+  .chapter-author: .ib: .ib2
+    block
+
+mixin img-redframe(path,name,ratio,right)
+  - var right = (right ? "img-redframe-r" : "")
+  .imgfrm.img-redframe(class=right)
+    img(src="img/"+path+"/pic/"+name+"@"+ratio+".jpg")
+    block
+
+mixin img-noframe(path,name,ratio,right)
+  .imgfrm.img-noframe
+    img(src="img/"+path+"/pic/"+name+"@"+ratio+".jpg")
+    block
+
+mixin img-blackframe(path,name,ratio)
+  .imgfrm.img-blackframe: .ib
+    img(src="img/"+path+"/pic/"+name+"@"+ratio+".jpg")
+    block

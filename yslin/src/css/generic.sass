@@ -1,0 +1,73 @@
+@import vars
+
+.todo
+  display: block
+  color: white
+  background: red
+  font-family: arial
+  padding: 3px
+  display: block
+
+  &:before
+    content: "(TODO)"
+
+.small-text
+  font-size: 0.5em
+  line-height: 1.3em
+
+.l4b
+  display: inline-block
+  width: 70px
+  height: 70px
+  margin: 30px
+  background: url(#{$img}/l4b.svg) center center no-repeat
+  background-size: cover
+
+.chapter-author
+  color: $c2
+  text-align: center
+  margin: 120px 0
+  .ib
+    display: inline-block
+    border: 2px solid $c3
+    .ib2
+      border: 1px solid $c2
+      margin: 3px
+      padding: 3px
+
+.hl-black, .hl-red
+  background: url(#{$img}/main/hl-black.png) center center repeat-x
+  width: 40%
+  margin: auto
+  text-align: center
+  color: $c3
+  .ib
+    display: inline-block
+    padding: 20px
+    font-size: 2.6em
+    background: #fff
+
+.hl-red
+  color: $c1
+  background: url(#{$img}/main/hl-red.png) center center repeat-x
+
+.comment
+  color: $c2
+  font-size: 0.7em
+  line-height: 1.5em
+
+.full-video
+  width: 100%
+  height: 100%
+  video
+    width: 100%
+    height: 100%
+    background: black
+  .comment
+    text-align: center
+
+.hr-bk
+  width: 30%
+  margin: 120px 35%
+  height: 1px
+  background: $c2

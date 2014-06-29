@@ -213,12 +213,13 @@ server = (req, res) ->
 log = (error, stdout, stderr) -> if "#{stdout}\n#{stderr}".trim! => console.log that
 update-file = ->
   [type,cmd] = [ftype(it), ""]
-  if /navbar.sass/exec it => it = it.replace /navbar\.sass/, "index.sass"
   des = it.replace /\/src\//, (if type==\jade => "/" else "/s/")
   if type == \other => return
   if type == \ls => cmd = "#{ls} -o #{path.dirname des} -cb #{it}"
-  if type == \sass => cmd = "#{sass} #{it} #{des.replace /\.sass$/, \.css}"
-  if type == \jade => cmd = "#{jade} -P #{it} -o ."
+  if type == \sass => cmd = "#{sass} src/css/main.sass s/css/main.css"
+  if type == \jade => cmd = "#{jade} -P src/jade/index.jade -o ."
+  #if type == \sass => cmd = "#{sass} #{it} #{des.replace /\.sass$/, \.css}"
+  #if type == \jade => cmd = "#{jade} -P #{it} -o ."
   if cmd =>
     console.log "[BUILD] #{cmd}"
     child_process.exec cmd, log

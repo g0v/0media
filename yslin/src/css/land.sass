@@ -1,3 +1,5 @@
+@import vars
+
 body
   letter-spacing: 1px
 #content
@@ -6,7 +8,7 @@ body
   width: 100%
   height: 100%
   min-height: 600px
-  background: url(img/landing/cover.jpg) center center no-repeat
+  background: url(#{$img}/land/cover.jpg) center center no-repeat
   background-size: cover
   text-align: center
   position: relative
@@ -74,11 +76,11 @@ body
   width: 100%
   min-height: 120px
   padding-top: 44px
-  background: url(img/landing/gbk-top.png) center bottom repeat-x
+  background: url(#{$img}/land/gbk-top.png) center bottom repeat-x
 #land-gbk-bottom
   top: auto
   bottom: 0
-  background: url(img/landing/gbk-bottom.png) center bottom repeat-x
+  background: url(#{$img}/land/gbk-bottom.png) center bottom repeat-x
 #trademark
   img
     width: 200px
