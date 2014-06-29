@@ -1032,24 +1032,17 @@ uiload {
   .cmp-s-right img.b {
     border: 15px solid black; }
 
-#icon-fund, #icon-pen {
+#icon-fund {
   position: absolute;
   bottom: 0;
   width: 160px;
   left: -230px; }
 
-#icon-fund-bar {
-  display: block;
-  position: absolute;
-  width: 10px;
-  height: 500px;
-  bottom: 0px;
-  left: -40px;
-  background: black; }
-
 #icon-pen {
-  width: 80px;
-  left: -100px; }
+  position: absolute;
+  bottom: 0;
+  width: 114px;
+  right: -124px; }
 
 #icon-taiwan, #icon-taiwan-bar {
   display: block;
