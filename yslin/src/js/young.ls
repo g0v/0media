@@ -1,6 +1,13 @@
 angular.module \yslin
-  ..controller \young, ($scope, $timeout) ->
-    console.log \ok2
+  ..controller \young, ($scope, $timeout, scrollr) ->
+    $scope.scrollr = do
+      rl: $('#young-sh .redline')
+    scrollr.register '#young-sh .redline', '#young-sh', '#young-sh', (it)->
+      $scope.scrollr.rl.each (i) ->
+        $(@)css marginLeft: if i => "#{it}%" else "#{70 - it}%"
+        #marginLeft: "#{100 - it}%"
+      #$scope.scrollr.r2.css marginLeft: "#it%"
+
     $scope.tab = 1
     $scope.tgltab = -> 
       $scope.tab = it 
@@ -12,7 +19,6 @@ angular.module \yslin
       $(document.body)animate {scrollTop: 2500}
 
     $scope.navToggle = null
-    $scope.saToggle = false
     $scope.saToggle = false
     $(window).scroll ->
       t = $(window).scrollTop!

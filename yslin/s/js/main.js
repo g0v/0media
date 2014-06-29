@@ -22,41 +22,53 @@ x$.directive('lzload', function(){
 x$.factory('scrollr', function(){
   return {
     list: [],
-    register: function(s, e, cb){
-      return this.list.push([s, e, cb]);
+    range: [],
+    rlen: 0,
+    register: function(t, s, e, cb){
+      return this.list.push([t, s, e, cb]);
+    },
+    refresh: function(){
+      var i$, ref$, len$, i, d, s, e;
+      for (i$ = 0, len$ = (ref$ = this.list).length; i$ < len$; ++i$) {
+        i = i$;
+        d = ref$[i$];
+        console.log(d, i);
+        s = $(d[1]).offset().top;
+        e = d[1] === d[2]
+          ? $(d[2]).offset().top + $(d[2]).height()
+          : d[2]
+            ? $(d[2]).offset().top
+            : $(d[1]).offset().top + 200;
+        this.range[i] = [s, e, e - s];
+      }
+      this.range.sort(function(a, b){
+        return b[0] - a[0];
+      });
+      return this.rlen = this.range.length;
+    },
+    tick: function(c){
+      var w, i$, ref$, len$, i, item, ratio, ref1$, ref2$, results$ = [];
+      w = $(window).height();
+      for (i$ = 0, len$ = (ref$ = this.range).length; i$ < len$; ++i$) {
+        i = i$;
+        item = ref$[i$];
+        ratio = (ref1$ = (ref2$ = parseInt(1000 * (c + w - item[0]) / item[2]) / 10) > 0 ? ref2$ : 0) < 100 ? ref1$ : 100;
+        console.log(ratio);
+        results$.push(this.list[i][3](ratio));
+      }
+      return results$;
     }
   };
 });
-x$.controller('main', function($scope, $interval, $timeout){
-  var refresher;
-  $scope.skrollr = skrollr.init({
-    forceHeight: false,
-    smoothScrolling: false
-  });
-  $scope.totalheight = 0;
-  $scope.refreshing = false;
-  $scope.refresh = function(){
-    if ($scope.refreshing) {
-      clearTimeout($scope.refreshing);
-    }
-    return $scope.refreshing = setTimeout(function(){
-      $scope.$apply(function(){
-        return $scope.refreshing = null;
-      });
-      return $scope.skrollr.refresh();
-    }, 500);
-  };
-  $(window).resize(function(){
-    return $scope.refresh();
-  });
-  refresher = function(){
-    var ta;
-    ta = $('#tail-anchor').offset().top;
-    if ($scope.totalheight !== ta) {
-      $scope.totalheight = ta;
-      return $scope.refresh();
-    }
-  };
-  $timeout(refresher, 1000);
-  return $interval(refresher, 5000);
+x$.controller('main', function($scope, $interval, $timeout, scrollr){
+  return $timeout(function(){
+    scrollr.refresh();
+    /*$interval ->
+      console.log ">>>",$(window).scrollTop!
+      scrollr.tick $(window).scrollTop!
+    ,1000*/
+    return $(window).scroll(function(){
+      return scrollr.tick($(window).scrollTop());
+    });
+  }, 2000);
 });

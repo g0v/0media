@@ -10,27 +10,33 @@ angular.module \yslin, <[]>
       else scope.isotope.appended e.0.parentNode.parentNode.parentNode
   ..factory \scrollr, -> do
     list: []
-    register: (s,e, cb) -> @list.push [s,e,cb]
+    range: []
+    rlen: 0
+    register: (t, s, e, cb) ->
+      @list.push [t, s, e, cb]
+    refresh: ->
+      for d,i in @list =>
+        console.log d,i
+        s = $(d.1)offset!top
+        e = if d.1==d.2 => $(d.2)offset!top + $(d.2)height! else if d.2 => $(d.2)offset!top else $(d.1)offset!top + 200
+        @range[i] = [s,e, e - s]
+      @range.sort (a,b) -> b.0 - a.0
+      @rlen = @range.length
+    tick: (c) ->
+      w = $(window).height!
+      for item,i in @range =>
+        ratio = parseInt(1000 * ( c + w - item.0 ) / item.2) / 10 >?0 <?100
+        console.log ratio
+        @list[i].3 ratio
 
-  ..controller \main, ($scope, $interval, $timeout) ->
-    $scope.skrollr = skrollr.init do
-      forceHeight: false
-      #render: $scope.render
-      smoothScrolling: false
-    $scope.totalheight = 0
-    $scope.refreshing = false
-    $scope.refresh = ->
-      if $scope.refreshing => clearTimeout $scope.refreshing
-      $scope.refreshing = setTimeout ->
-        $scope.$apply -> $scope.refreshing = null
-        $scope.skrollr.refresh!
-      , 500
-    $(window).resize -> $scope.refresh!
 
-    refresher = ->
-      ta = $(\#tail-anchor).offset!top
-      if $scope.totalheight != ta => 
-        $scope.totalheight = ta
-        $scope.refresh!
-    $timeout refresher, 1000
-    $interval refresher, 5000
+  ..controller \main, ($scope, $interval, $timeout, scrollr) ->
+   
+    $timeout ->
+      scrollr.refresh!
+      /*$interval ->
+        console.log ">>>",$(window).scrollTop!
+        scrollr.tick $(window).scrollTop!
+      ,1000*/
+      $(window).scroll -> scrollr.tick $(window).scrollTop!
+    , 2000
