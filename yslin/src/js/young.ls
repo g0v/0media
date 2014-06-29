@@ -1,4 +1,5 @@
 young = ($scope, $timeout) ->
+  console.log \ok2
   $scope.tab = 1
   $scope.tgltab = -> 
     $scope.tab = it 
@@ -13,5 +14,23 @@ young = ($scope, $timeout) ->
   $scope.skrollr = skrollr.init({forceHeight: false, render: $scope.render})
   $timeout ->
     $scope.skrollr.refresh!
+    console.log \ok
+    $(\#small-avatars)removeClass \active
+    console.log $(\#small-avatars)attr \class
   , 1000
+  $timeout ->
+    console.log $(\#small-avatars)attr \class
+  , 3000
+  $scope.saToggle = false
+  $(window).scroll ->
+    t = $(window).scrollTop!
+    h = $(window).height!
+    a = $(\#yng-c-sep2)offset!top
+
+    if t + h * 1.5 <= a and $scope.saToggle => 
+      $scope.$apply -> $scope.saToggle = false
+      $(\#small-avatars)removeClass \active
+    if t + h * 1.5 >= a and !$scope.saToggle => 
+      $scope.$apply -> $scope.saToggle = true
+      $(\#small-avatars)addClass \active
 
