@@ -20,6 +20,7 @@ young = function($scope, $timeout){
   };
   $scope.navToggle = null;
   $scope.saToggle = false;
+  $scope.saToggle = false;
   return $(window).scroll(function(){
     var t, h, a;
     t = $(window).scrollTop();
@@ -35,7 +36,19 @@ young = function($scope, $timeout){
       $scope.$apply(function(){
         return $scope.saToggle = true;
       });
-      return $('#small-avatars').addClass('active');
+      $('#small-avatars').addClass('active');
+    }
+    if (t + h * 0.5 <= a && $scope.saToggle2) {
+      $scope.$apply(function(){
+        return $scope.saToggle2 = false;
+      });
+      $('#small-avatars').removeClass('hide');
+    }
+    if (t + h * 0.5 >= a && !$scope.saToggle2) {
+      $scope.$apply(function(){
+        return $scope.saToggle2 = true;
+      });
+      return $('#small-avatars').addClass('hide');
     }
   });
 };

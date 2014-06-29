@@ -12,6 +12,7 @@ young = ($scope, $timeout) ->
 
   $scope.navToggle = null
   $scope.saToggle = false
+  $scope.saToggle = false
   $(window).scroll ->
     t = $(window).scrollTop!
     h = $(window).height!
@@ -23,3 +24,9 @@ young = ($scope, $timeout) ->
     if t + h * 1.5 >= a and !$scope.saToggle => 
       $scope.$apply -> $scope.saToggle = true
       $(\#small-avatars)addClass \active
+    if t + h * 0.5 <= a and $scope.saToggle2 => 
+      $scope.$apply -> $scope.saToggle2 = false
+      $(\#small-avatars)removeClass \hide
+    if t + h * 0.5 >= a and !$scope.saToggle2 => 
+      $scope.$apply -> $scope.saToggle2 = true
+      $(\#small-avatars)addClass \hide

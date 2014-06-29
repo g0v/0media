@@ -518,6 +518,9 @@ uiload {
   border: 1px solid #cccccc;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); }
 
+#small-avatars.hide {
+  display: none; }
+
 #avatars .avatar:hover {
   opacity: 1 !important;
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); }
