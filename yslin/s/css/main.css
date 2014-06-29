@@ -937,23 +937,27 @@ uiload {
 
 #clock-base {
   width: 140px;
+  height: 140px;
   left: 50%;
   margin: 30px 0 0 -70px; }
 
 #clock-center {
   width: 70px;
+  height: 70px;
   left: 50%;
   top: 100px;
   margin: -35px 0 0 -35px; }
 
 #clock-minute {
   width: 70px;
+  height: 70px;
   left: 50%;
   top: 100px;
   margin: -35px 0 0 -35px; }
 
 #clock-second {
   width: 70px;
+  height: 70px;
   left: 50%;
   top: 100px;
   margin: -35px 0 0 -35px;
@@ -1270,7 +1274,7 @@ img.ico-key {
     content: " ";
     width: 120px;
     height: 80px;
-    background: url(../../img/white/lock2.svg) center center no-repeat;
+    background: url(../../img/white/lock-white.png) center center no-repeat;
     background-size: cover; }
 .white-shl .title {
   font-size: 2.5em; }

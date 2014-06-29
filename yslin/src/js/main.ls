@@ -1,4 +1,4 @@
-main = ($scope, $interval) ->
+main = ($scope, $interval, $timeout) ->
   $scope.skrollr = skrollr.init do
     forceHeight: false
     #render: $scope.render
@@ -13,9 +13,10 @@ main = ($scope, $interval) ->
     , 500
   $(window).resize -> $scope.refresh!
 
-  $interval ->
+  refresher = ->
     ta = $(\#tail-anchor).offset!top
     if $scope.totalheight != ta => 
       $scope.totalheight = ta
       $scope.refresh!
-  ,1000
+  $timeout refresher, 1000
+  $interval refresher, 5000
