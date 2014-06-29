@@ -255,6 +255,22 @@ ul.chapter-list {
     width: 80%; }
     .intro br {
       display: none; } }
+.lz-hide {
+  opacity: 0;
+  -ms-transition: all 1s;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s; }
+
+.lz-show {
+  opacity: 1;
+  -ms-transition: all 1s;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s; }
+
 body {
   letter-spacing: 1px; }
 
