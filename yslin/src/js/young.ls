@@ -11,16 +11,11 @@ young = ($scope, $timeout) ->
     $scope.tgltab tab
   $scope.sb = ->
     $(document.body)animate {scrollTop: 2500}
-  $scope.skrollr = skrollr.init({forceHeight: false, render: $scope.render})
-  $timeout ->
+  #$scope.skrollr = skrollr.init({forceHeight: false, render: $scope.render})
+
+  /*$timeout ->
     $scope.skrollr.refresh!
-    console.log \ok
-    $(\#small-avatars)removeClass \active
-    console.log $(\#small-avatars)attr \class
-  , 1000
-  $timeout ->
-    console.log $(\#small-avatars)attr \class
-  , 3000
+  , 1000*/
   $scope.saToggle = false
   $(window).scroll ->
     t = $(window).scrollTop!

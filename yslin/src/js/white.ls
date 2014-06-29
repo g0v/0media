@@ -14,13 +14,8 @@ white = ($scope, $timeout) ->
     top = $($scope.video).position!top
     h = $($scope.video)height!
     if s + wh > top and s < top + h and $scope.video.paused => $scope.video.play!
-    if s > top + h and !$scope.video.paused => $scope.video.pause!
-  setTimeout ->
-    skrollr.init do
-      forceHeight: false
-      render: $scope.render
-      smoothScrolling: false
-  , 1000
+e   if s > top + h and !$scope.video.paused => $scope.video.pause!
+
   melist-range = [[0 120] [120 350] [350 510] [510 695] [695 900] [900 1120] [1120 1400]]map ->
     [it.0/1440, it.1/1440]
   console.log melist-range

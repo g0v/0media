@@ -26,13 +26,6 @@ white = function($scope, $timeout){
       return $scope.video.pause();
     }
   };
-  setTimeout(function(){
-    return skrollr.init({
-      forceHeight: false,
-      render: $scope.render,
-      smoothScrolling: false
-    });
-  }, 1000);
   melistRange = [[0, 120], [120, 350], [350, 510], [510, 695], [695, 900], [900, 1120], [1120, 1400]].map(function(it){
     return [it[0] / 1440, it[1] / 1440];
   });

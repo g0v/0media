@@ -21,19 +21,9 @@ young = function($scope, $timeout){
       scrollTop: 2500
     });
   };
-  $scope.skrollr = skrollr.init({
-    forceHeight: false,
-    render: $scope.render
-  });
-  $timeout(function(){
-    $scope.skrollr.refresh();
-    console.log('ok');
-    $('#small-avatars').removeClass('active');
-    return console.log($('#small-avatars').attr('class'));
-  }, 1000);
-  $timeout(function(){
-    return console.log($('#small-avatars').attr('class'));
-  }, 3000);
+  /*$timeout ->
+    $scope.skrollr.refresh!
+  , 1000*/
   $scope.saToggle = false;
   return $(window).scroll(function(){
     var t, h, a;
