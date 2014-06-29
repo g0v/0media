@@ -124,9 +124,21 @@ uiload {
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s; }
+    .navbar.navbar-inverse .navbar-nav > li > a .navico .desc {
+      border: 1px solid #808285;
+      border-radius: 3px;
+      background: #fcfdcc;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+      color: black;
+      padding: 2px;
+      font-size: 12px;
+      text-align: center; }
     .navbar.navbar-inverse .navbar-nav > li > a .navico img {
       width: 100%; }
-  .navbar.navbar-inverse .navbar-nav > li > a .navico.show {
+  .navbar.navbar-inverse .navbar-nav > li > a.active {
+    color: #db4441;
+    font-size: 2.5em; }
+  .navbar.navbar-inverse .navbar-nav > li > a.active .navico {
     opacity: 1;
     width: 80px;
     margin-left: -32px; }

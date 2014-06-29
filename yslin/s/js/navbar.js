@@ -2,29 +2,7 @@
 var navbar;
 navbar = function($scope){
   $scope.showicon = 0;
-  $scope.iconToggle = function(v){
-    return $scope.showicon = v;
+  return $scope.iconToggle = function(v){
+    return $scope.navToggle = v;
   };
-  return $(window).scroll(function(){
-    var t, nav;
-    t = $(window).scrollTop();
-    nav = [['#chapter-white', 4], ['#chapter-cmp', 3], ['#chapter-life', 2], ['#chapter-young', 1]].filter(function(it){
-      var x;
-      x = $(it[0]).offset().top;
-      if (t >= x - 200) {
-        return true;
-      } else {
-        return false;
-      }
-    });
-    if (!nav.length && $scope.navToggle) {
-      return $scope.$apply(function(){
-        return $scope.navToggle = 0;
-      });
-    } else if (nav.length && $scope.navToggle !== nav[0][1]) {
-      return $scope.$apply(function(){
-        return $scope.navToggle = nav[0][1];
-      });
-    }
-  });
 };
