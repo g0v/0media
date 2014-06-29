@@ -1,4 +1,5 @@
 main = ($scope, $interval, $timeout) ->
+  /*
   $scope.skrollr = skrollr.init do
     forceHeight: false
     #render: $scope.render
@@ -20,3 +21,4 @@ main = ($scope, $interval, $timeout) ->
       $scope.refresh!
   $timeout refresher, 1000
   $interval refresher, 5000
+  */
