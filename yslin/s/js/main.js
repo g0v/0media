@@ -29,6 +29,9 @@ x$.factory('scrollr', function(){
 });
 x$.controller('main', function($scope, $interval, $timeout){
   var refresher;
+  if (/windows phone|android|ipad|iphone|ipod/i.test(navigator.userAgent.toLowerCase())) {
+    return;
+  }
   $scope.skrollr = skrollr.init({
     forceHeight: false,
     smoothScrolling: false
