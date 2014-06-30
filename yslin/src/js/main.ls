@@ -13,6 +13,7 @@ angular.module \yslin, <[]>
     register: (s,e, cb) -> @list.push [s,e,cb]
 
   ..controller \main, ($scope, $interval, $timeout) ->
+    if /windows phone|android|ipad|iphone|ipod/i.test(navigator.userAgent.toLowerCase!) => return
     $scope.skrollr = skrollr.init do
       forceHeight: false
       #render: $scope.render

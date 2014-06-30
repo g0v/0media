@@ -1,6 +1,6 @@
 mixin fixbk(path,name,ratio,align)
   -var align = (align?align:"right")
-  .full
+  .full(style="background-image:url(img/"+path+"/pic/"+name+"@"+ratio+".jpg);")
     .full-bk(id="life-fb-"+name,style="background-image:url(img/"+path+"/pic/"+name+"@"+ratio+".jpg);",data-anchor-target="#life-ff"+name,data-bottom-top="top:100%",data-top-top="top:0%",data-bottom-bottom="top:0%",data-top-bottom="top:-100%")
     .full-fk(class="full-fk-"+align,id="life-ff"+name)
       block

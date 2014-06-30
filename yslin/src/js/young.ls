@@ -14,6 +14,9 @@ angular.module \yslin
     $scope.navToggle = null
     $scope.saToggle = false
     $scope.saToggle = false
+    if /windows phone|android|ipad|iphone|ipod/i.test(navigator.userAgent.toLowerCase!) =>
+      $(\#small-avatars)hide!
+      return
     $(window).scroll ->
       t = $(window).scrollTop!
       h = $(window).height!

@@ -22,6 +22,10 @@ x$.controller('young', function($scope, $timeout){
   $scope.navToggle = null;
   $scope.saToggle = false;
   $scope.saToggle = false;
+  if (/windows phone|android|ipad|iphone|ipod/i.test(navigator.userAgent.toLowerCase())) {
+    $('#small-avatars').hide();
+    return;
+  }
   return $(window).scroll(function(){
     var t, h, a;
     t = $(window).scrollTop();
