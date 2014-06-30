@@ -2,11 +2,18 @@ angular.module \yslin
   ..controller \young, ($scope, $timeout, scrollr) ->
     $scope.scrollr = do
       rl: $('#young-sh .redline')
-    scrollr.register '#young-sh .redline', '#young-sh', '#young-sh', (it)->
+      pk: $('#young-sh .speaker')
+    scrollr.register (->$('#young-sh')offset!top + $(window)height!/4), (->$(window)height!/2),  (it)->
       $scope.scrollr.rl.each (i) ->
-        $(@)css marginLeft: if i => "#{it}%" else "#{70 - it}%"
-        #marginLeft: "#{100 - it}%"
-      #$scope.scrollr.r2.css marginLeft: "#it%"
+        $(@)css marginLeft: if i => "#{it * 20}%" else "#{40 - (it * 20)}%"
+    scrollr.register (->$('#young-sh')offset!top + $(window)height!/4), (->$(window)height!/2),  (it)->
+      $scope.scrollr.pk.each (i) ->
+        $(@)css if i => do
+          marginLeft: "#{320 - (it *285)}px" 
+          marginTop: "#{200 - it * 123}px"
+        else
+          marginLeft: "#{-410 + it * 285}px"
+          marginTop: "#{200 - it * 123}px"
 
     $scope.tab = 1
     $scope.tgltab = -> 
@@ -20,6 +27,7 @@ angular.module \yslin
 
     $scope.navToggle = null
     $scope.saToggle = false
+    /*
     $(window).scroll ->
       t = $(window).scrollTop!
       h = $(window).height!
@@ -37,3 +45,4 @@ angular.module \yslin
       if t + h * 0.5 >= a and !$scope.saToggle2 => 
         $scope.$apply -> $scope.saToggle2 = true
         $(\#small-avatars)addClass \hide
+    */

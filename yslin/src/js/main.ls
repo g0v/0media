@@ -12,22 +12,20 @@ angular.module \yslin, <[]>
     list: []
     range: []
     rlen: 0
-    register: (t, s, e, cb) ->
-      @list.push [t, s, e, cb]
+    register: (s, e, cb) ->
+      @list.push [s, e, cb]
     refresh: ->
       for d,i in @list =>
-        console.log d,i
-        s = $(d.1)offset!top
-        e = if d.1==d.2 => $(d.2)offset!top + $(d.2)height! else if d.2 => $(d.2)offset!top else $(d.1)offset!top + 200
-        @range[i] = [s,e, e - s]
+        [s,o] = [d.0!,d.1!]
+        @range[i] = [s, s + o , o]
       @range.sort (a,b) -> b.0 - a.0
       @rlen = @range.length
     tick: (c) ->
       w = $(window).height!
       for item,i in @range =>
-        ratio = parseInt(1000 * ( c + w - item.0 ) / item.2) / 10 >?0 <?100
-        console.log ratio
-        @list[i].3 ratio
+        ratio = (( c + w - item.0 ) / item.2) >?0 <?1
+        #console.log item.0, item.1, item.2, ratio
+        @list[i].2 ratio
 
 
   ..controller \main, ($scope, $interval, $timeout, scrollr) ->
@@ -38,5 +36,5 @@ angular.module \yslin, <[]>
         console.log ">>>",$(window).scrollTop!
         scrollr.tick $(window).scrollTop!
       ,1000*/
-      $(window).scroll -> scrollr.tick $(window).scrollTop!
-    , 2000
+      #$(window).scroll -> scrollr.tick $(window).scrollTop!
+    , 1000

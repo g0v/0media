@@ -3,15 +3,37 @@ var x$;
 x$ = angular.module('yslin');
 x$.controller('young', function($scope, $timeout, scrollr){
   $scope.scrollr = {
-    rl: $('#young-sh .redline')
+    rl: $('#young-sh .redline'),
+    pk: $('#young-sh .speaker')
   };
-  scrollr.register('#young-sh .redline', '#young-sh', '#young-sh', function(it){
+  scrollr.register(function(){
+    return $('#young-sh').offset().top + $(window).height() / 4;
+  }, function(){
+    return $(window).height() / 2;
+  }, function(it){
     return $scope.scrollr.rl.each(function(i){
       return $(this).css({
         marginLeft: i
-          ? it + "%"
-          : (70 - it) + "%"
+          ? it * 20 + "%"
+          : (40 - it * 20) + "%"
       });
+    });
+  });
+  scrollr.register(function(){
+    return $('#young-sh').offset().top + $(window).height() / 4;
+  }, function(){
+    return $(window).height() / 2;
+  }, function(it){
+    return $scope.scrollr.pk.each(function(i){
+      return $(this).css(i
+        ? {
+          marginLeft: (320 - it * 285) + "px",
+          marginTop: (200 - it * 123) + "px"
+        }
+        : {
+          marginLeft: (-410 + it * 285) + "px",
+          marginTop: (200 - it * 123) + "px"
+        });
     });
   });
   $scope.tab = 1;
@@ -31,35 +53,5 @@ x$.controller('young', function($scope, $timeout, scrollr){
     });
   };
   $scope.navToggle = null;
-  $scope.saToggle = false;
-  return $(window).scroll(function(){
-    var t, h, a;
-    t = $(window).scrollTop();
-    h = $(window).height();
-    a = $('#yng-c-sep2').offset().top;
-    if (t + h * 1.5 <= a && $scope.saToggle) {
-      $scope.$apply(function(){
-        return $scope.saToggle = false;
-      });
-      $('#small-avatars').removeClass('active');
-    }
-    if (t + h * 1.5 >= a && !$scope.saToggle) {
-      $scope.$apply(function(){
-        return $scope.saToggle = true;
-      });
-      $('#small-avatars').addClass('active');
-    }
-    if (t + h * 0.5 <= a && $scope.saToggle2) {
-      $scope.$apply(function(){
-        return $scope.saToggle2 = false;
-      });
-      $('#small-avatars').removeClass('hide');
-    }
-    if (t + h * 0.5 >= a && !$scope.saToggle2) {
-      $scope.$apply(function(){
-        return $scope.saToggle2 = true;
-      });
-      return $('#small-avatars').addClass('hide');
-    }
-  });
+  return $scope.saToggle = false;
 });

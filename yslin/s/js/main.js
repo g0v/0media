@@ -24,22 +24,16 @@ x$.factory('scrollr', function(){
     list: [],
     range: [],
     rlen: 0,
-    register: function(t, s, e, cb){
-      return this.list.push([t, s, e, cb]);
+    register: function(s, e, cb){
+      return this.list.push([s, e, cb]);
     },
     refresh: function(){
-      var i$, ref$, len$, i, d, s, e;
+      var i$, ref$, len$, i, d, ref1$, s, o;
       for (i$ = 0, len$ = (ref$ = this.list).length; i$ < len$; ++i$) {
         i = i$;
         d = ref$[i$];
-        console.log(d, i);
-        s = $(d[1]).offset().top;
-        e = d[1] === d[2]
-          ? $(d[2]).offset().top + $(d[2]).height()
-          : d[2]
-            ? $(d[2]).offset().top
-            : $(d[1]).offset().top + 200;
-        this.range[i] = [s, e, e - s];
+        ref1$ = [d[0](), d[1]()], s = ref1$[0], o = ref1$[1];
+        this.range[i] = [s, s + o, o];
       }
       this.range.sort(function(a, b){
         return b[0] - a[0];
@@ -52,9 +46,8 @@ x$.factory('scrollr', function(){
       for (i$ = 0, len$ = (ref$ = this.range).length; i$ < len$; ++i$) {
         i = i$;
         item = ref$[i$];
-        ratio = (ref1$ = (ref2$ = parseInt(1000 * (c + w - item[0]) / item[2]) / 10) > 0 ? ref2$ : 0) < 100 ? ref1$ : 100;
-        console.log(ratio);
-        results$.push(this.list[i][3](ratio));
+        ratio = (ref1$ = (ref2$ = (c + w - item[0]) / item[2]) > 0 ? ref2$ : 0) < 1 ? ref1$ : 1;
+        results$.push(this.list[i][2](ratio));
       }
       return results$;
     }
@@ -62,13 +55,6 @@ x$.factory('scrollr', function(){
 });
 x$.controller('main', function($scope, $interval, $timeout, scrollr){
   return $timeout(function(){
-    scrollr.refresh();
-    /*$interval ->
-      console.log ">>>",$(window).scrollTop!
-      scrollr.tick $(window).scrollTop!
-    ,1000*/
-    return $(window).scroll(function(){
-      return scrollr.tick($(window).scrollTop());
-    });
-  }, 2000);
+    return scrollr.refresh();
+  }, 1000);
 });
