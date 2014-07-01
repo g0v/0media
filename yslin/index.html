@@ -32,6 +32,17 @@
     <script type="text/javascript" src="s/js/navbar.js"></script>
   </head>
   <body ng-app="yslin" ng-controller="main">
+    <div id="db-root"></div>
+    <script>
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&appId=646775858745770&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+      
+    </script>
     <div role="navigation" ng-controller="navbar" class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header"><a href="#" class="navbar-brand">
